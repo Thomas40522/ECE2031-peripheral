@@ -1,0 +1,23 @@
+[LED_Bar_Controller Project]
+
+TODO LIST:
+(Just put 'DONE' in front of any completed items)
+- TODO:
+- Add signal to indicate whether 'data_in' is negative or positive, and add a signal for the absolute value of 'data_in'
+- Rework design to accept negative values (LED's 0-8 for positive, 9-1 for negative)
+- Implement PWM signal using clock divider:	Duty cycle (0-100%) = [|data_in|%(3,640)] / 3,640
+- Rework design to drive highest-valued LED with PWM signal
+- Figure out how to initialize/load gamma correction values in FPGA memory
+- Edit PWM architecture to use gamma correction values
+- Optional: Write simple SCOMP program that demonstrates LED Bar functionality
+
+
+LOGBOOK:
+(Include an entry any time you modify any of the project files, include your name, the date, and a short description)
+
+Benjamin Marshall 23MAR2025:
+- Created new quartus project using the SCOMP project from lab 8 as a template
+- Created basic 'LED_Bar_Controller' VHDL file that takes an unsigned 16-bit number from SCOMP and turns the 10 LED's on/off
+- Updated IO_Decoder.vhd and .bsf files to allow the IO decoder to enable the LED Bar Controller
+- Updated the SCOMP.bdf file, adding a symbol block for the LED Bar Controller, and wiring it up appropriately
+- Created TODO list outlining necessary future steps
