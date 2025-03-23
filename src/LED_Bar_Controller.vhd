@@ -16,9 +16,9 @@ use ieee.std_logic_arith.all;
 -- Entity block defines the I/O of design; how the hardware will interface with the outside world
 entity LED_Bar_Controller is
 	port(
-	clock		:in	std_logic;	-- 100KHz Clock is used for PWM control of LED brightness
-	enable	:in	std_logic;	-- Signal from IO decoder to begin driving LED's
-	data_in	:in	std_logic_vector(15 downto 0);	-- 16-bit value from SCOMP
+	clock		:in	std_logic;			-- 100KHz Clock is used for PWM control of LED brightness
+	enable		:in	std_logic;			-- Signal from IO decoder to begin driving LED's
+	data_in		:in	std_logic_vector(15 downto 0);	-- 16-bit value from SCOMP
 	data_out	:out	std_logic_vector(15 downto 0) 	-- LED output
 	);
 end LED_Bar_Controller;
