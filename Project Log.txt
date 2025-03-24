@@ -2,7 +2,7 @@
 
 TODO LIST:
 (Just put 'DONE' in front of any completed items)
-- TODO:
+- Clean up Quartus folder (remove unnecessary files)
 - Add signal to indicate whether 'data_in' is negative or positive, and add a signal for the absolute value of 'data_in'
 - Rework design to accept negative values (LED's 0-8 for positive, 9-1 for negative)
 - Implement PWM signal using clock divider:	Duty cycle (0-100%) = [|data_in|%(3,640)] / 3,640
