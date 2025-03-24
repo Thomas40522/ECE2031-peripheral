@@ -9,7 +9,7 @@ TODO LIST:
 - Rework design to drive highest-valued LED with PWM signal
 - Figure out how to initialize/load gamma correction values in FPGA memory
 - Edit PWM architecture to use gamma correction values
-- Optional: Write simple SCOMP program that demonstrates LED Bar functionality
+- Write simple SCOMP program that demonstrates LED Bar functionality
 
 
 LOGBOOK:
