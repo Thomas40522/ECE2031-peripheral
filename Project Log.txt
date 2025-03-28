@@ -2,6 +2,7 @@
 
 TODO LIST:
 (Just put 'DONE' in front of any completed items)
+- Flip LED display order
 - Clean up Quartus folder (remove unnecessary files)
 - Add signal to indicate whether 'data_in' is negative or positive, and add a signal for the absolute value of 'data_in'
 - Rework design to accept negative values (LED's 0-8 for positive, 9-1 for negative)
@@ -9,7 +10,8 @@ TODO LIST:
 - Rework design to drive highest-valued LED with PWM signal
 - Figure out how to initialize/load gamma correction values in FPGA memory
 - Edit PWM architecture to use gamma correction values
-- Write simple SCOMP program that demonstrates LED Bar functionality
+- [DONE 3/28] Write simple SCOMP program that demonstrates LED Bar functionality
+- Restore functionality of DIG_OUT in SCOMP.bdf
 
 
 LOGBOOK:
@@ -21,3 +23,9 @@ Benjamin Marshall 23MAR2025:
 - Updated IO_Decoder.vhd and .bsf files to allow the IO decoder to enable the LED Bar Controller
 - Updated the SCOMP.bdf file, adding a symbol block for the LED Bar Controller, and wiring it up appropriately
 - Created TODO list outlining necessary future steps
+
+Benjamin Marshall 28MAR2025:
+- Feiyang created a driver program for SCOMP 'bar_demo_x.mif' which demonstrates device functionality and updated SCOMP.vhd to load it
+- Resolved issue in SCOMP.bdf where DIG_IN block magically gained another input, input is still there but disconnected
+- Commented out statement in peripheral VHDL that was responsible for high impedance-ing LED's, because it was causing flashing
+- Disconnected DIG_OUT block from LED's bdf to resolve peripherals fighting over LED control, this needs to be fixed.
