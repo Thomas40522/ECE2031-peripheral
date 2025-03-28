@@ -1,6 +1,6 @@
 Assembler report for SCOMP
-Sun Mar 23 18:02:41 2025
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fri Mar 28 15:04:14 2025
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/ben69/Documents/Spring 2025/Digital Design Lab/Final Project/SCOMP/output_files/SCOMP.sof
+  5. Assembler Device Options: C:/Users/fxie64/Downloads/ECE2031-peripheral-main/ECE2031-peripheral-main/src/output_files/SCOMP.sof
   6. Assembler Messages
 
 
@@ -18,7 +18,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2019  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Mar 23 18:02:41 2025 ;
+; Assembler Status      ; Successful - Fri Mar 28 15:04:13 2025 ;
 ; Revision Name         ; SCOMP                                 ;
 ; Top-level Entity Name ; SCOMP_System                          ;
 ; Family                ; Cyclone V                             ;
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                          ;
-+----------------------------------------------------------------------------------------------------+
-; File Name                                                                                          ;
-+----------------------------------------------------------------------------------------------------+
-; C:/Users/ben69/Documents/Spring 2025/Digital Design Lab/Final Project/SCOMP/output_files/SCOMP.sof ;
-+----------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                            ;
++------------------------------------------------------------------------------------------------------+
+; File Name                                                                                            ;
++------------------------------------------------------------------------------------------------------+
+; C:/Users/fxie64/Downloads/ECE2031-peripheral-main/ECE2031-peripheral-main/src/output_files/SCOMP.sof ;
++------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ben69/Documents/Spring 2025/Digital Design Lab/Final Project/SCOMP/output_files/SCOMP.sof ;
-+----------------+-------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                     ;
-+----------------+-------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00CE97DF                                                                                                  ;
-; Checksum       ; 0x00CE97DF                                                                                                  ;
-+----------------+-------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/fxie64/Downloads/ECE2031-peripheral-main/ECE2031-peripheral-main/src/output_files/SCOMP.sof ;
++----------------+---------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                       ;
++----------------+---------------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x00D04829                                                                                                    ;
+; Checksum       ; 0x00D04829                                                                                                    ;
++----------------+---------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -77,14 +77,14 @@ https://fpgasoftware.intel.com/eula.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Mar 23 18:02:33 2025
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Fri Mar 28 15:04:08 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off SCOMP -c SCOMP
 Info (115030): Assembler is generating device programming files
-Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 13238 megabytes
-    Info: Processing ended: Sun Mar 23 18:02:41 2025
-    Info: Elapsed time: 00:00:08
+Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4846 megabytes
+    Info: Processing ended: Fri Mar 28 15:04:14 2025
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 
 

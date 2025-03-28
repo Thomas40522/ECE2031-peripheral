@@ -1,6 +1,6 @@
 Flow report for SCOMP
-Sun Mar 23 18:02:50 2025
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fri Mar 28 15:04:24 2025
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
 ---------------------
@@ -21,7 +21,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2019  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Mar 23 18:02:50 2025       ;
-; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Flow Status                     ; Successful - Fri Mar 28 15:04:24 2025       ;
+; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SCOMP                                       ;
 ; Top-level Entity Name           ; SCOMP_System                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 273 / 41,910 ( < 1 % )                      ;
-; Total registers                 ; 278                                         ;
+; Logic utilization (in ALMs)     ; 329 / 41,910 ( < 1 % )                      ;
+; Total registers                 ; 272                                         ;
 ; Total pins                      ; 64 / 499 ( 13 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 32,768 / 5,662,720 ( < 1 % )                ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/23/2025 17:59:58 ;
+; Start date & time ; 03/28/2025 15:02:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SCOMP               ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name  ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 200875122784307.174276719818016        ; --            ; --           ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 128122666299505.174318856119260        ; --            ; --           ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_signal_integrity ;
@@ -113,12 +113,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 13320 MB            ; 00:00:21                           ;
-; Fitter               ; 00:02:20     ; 1.0                     ; 15772 MB            ; 00:12:49                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 13237 MB            ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.5                     ; 13704 MB            ; 00:00:07                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 13230 MB            ; 00:00:01                           ;
-; Total                ; 00:02:47     ; --                      ; --                  ; 00:13:24                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4906 MB             ; 00:00:19                           ;
+; Fitter               ; 00:01:14     ; 1.0                     ; 6912 MB             ; 00:03:06                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4845 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.4                     ; 5225 MB             ; 00:00:08                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4834 MB             ; 00:00:02                           ;
+; Total                ; 00:01:37     ; --                      ; --                  ; 00:03:41                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -127,11 +127,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; Bens-Surface     ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; Bens-Surface     ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; Bens-Surface     ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Bens-Surface     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; Bens-Surface     ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; ECE-CCB018-27    ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; ECE-CCB018-27    ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; ECE-CCB018-27    ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; ECE-CCB018-27    ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; ECE-CCB018-27    ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
