@@ -16,15 +16,18 @@ use ieee.std_logic_arith.all;
 -- Entity block defines the I/O of design; how the hardware will interface with the outside world
 entity LED_Bar_Controller is
 	port(
-	clock		:in	std_logic;			-- 100KHz Clock is used for PWM control of LED brightness
+	clock			:in	std_logic;			-- 100KHz Clock is used for PWM control of LED brightness
 	enable		:in	std_logic;			-- Signal from IO decoder to begin driving LED's
 	data_in		:in	std_logic_vector(15 downto 0);	-- 16-bit value from SCOMP
-	data_out	:out	std_logic_vector(15 downto 0) 	-- LED output
+	data_out		:out	std_logic_vector(15 downto 0) 	-- LED output
 	);
 end LED_Bar_Controller;
 
 -- Architecture block defines the internal behavior/structure of entity
 architecture Behavior of LED_Bar_Controller is
+
+	signal hi_impedance : std_logic_vector(15 downto 0);
+
 begin
 	-- Generic map block is used similarly to a '#define' section in conventional programming languages
 	--generic map(
@@ -100,9 +103,10 @@ begin
 				data_out(9) <= '0';
 			end if;
 			
-		else
-			data_out <= "Z";	-- Output is set to high impedance if the LED bar controller is not enabled
+--		else
+--			data_out <= hi_impedance;	-- Output is set to high impedance if the LED bar controller is not enabled
 		end if;
 		
 	end process;
+	hi_impedance <= (others => 'Z');
 end Behavior;

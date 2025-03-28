@@ -4,7 +4,7 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2019  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(input)
-	(rect 72 752 248 768)
+	(rect 8 768 184 784)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "SW[9..0]" (rect 9 0 52 12)(font "Arial" ))
 	(pt 176 8)
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 0 768 72 792))
+	(annotation_block (location)(rect -64 784 8 808))
 )
 (pin
 	(output)
@@ -929,12 +929,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 232 296)
 )
 (connector
-	(text "0,0,0,0,0,0,SW[9..0]" (rect 226 712 315 729)(font "Intel Clear" ))
-	(pt 312 728)
-	(pt 216 728)
-	(bus)
-)
-(connector
 	(text "clock_10Hz" (rect 234 528 288 545)(font "Intel Clear" ))
 	(pt 224 544)
 	(pt 304 544)
@@ -981,12 +975,6 @@ https://fpgasoftware.intel.com/eula.
 	(text "NIO_WRITE" (rect 576 224 631 241)(font "Intel Clear" ))
 	(pt 568 240)
 	(pt 624 240)
-)
-(connector
-	(text "LED[15..0]" (rect 1066 536 1114 553)(font "Intel Clear" ))
-	(pt 1056 552)
-	(pt 1112 552)
-	(bus)
 )
 (connector
 	(text "IO_DATA[15..0]" (rect 762 568 835 585)(font "Intel Clear" ))
@@ -1130,17 +1118,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 296 760)
-	(pt 248 760)
-	(bus)
-)
-(connector
-	(text "SW[9..0]" (rect 250 744 290 761)(font "Intel Clear" ))
-	(pt 248 760)
-	(pt 240 760)
-	(bus)
-)
-(connector
 	(pt 272 88)
 	(pt 280 88)
 )
@@ -1195,9 +1172,40 @@ https://fpgasoftware.intel.com/eula.
 	(pt 320 904)
 	(bus)
 )
+(connector
+	(pt 304 768)
+	(pt 256 768)
+	(bus)
+)
+(connector
+	(text "0,0,0,0,0,0,SW[9..0]" (rect 42 720 131 737)(font "Intel Clear" ))
+	(pt 304 736)
+	(pt 32 736)
+	(bus)
+)
+(connector
+	(pt 304 744)
+	(pt 304 736)
+	(bus)
+)
+(connector
+	(pt 304 744)
+	(pt 312 744)
+	(bus)
+)
+(connector
+	(text "SW[9..0]" (rect 186 760 226 777)(font "Intel Clear" ))
+	(pt 256 776)
+	(pt 184 776)
+	(bus)
+)
+(connector
+	(pt 256 768)
+	(pt 256 776)
+	(bus)
+)
 (junction (pt 512 280))
 (junction (pt 528 712))
-(junction (pt 248 760))
 (junction (pt 280 88))
 (title_block
 	(rect 944 912 1312 1032)
@@ -1206,7 +1214,7 @@ https://fpgasoftware.intel.com/eula.
 	(section (rect 0 48 368 72)(text "DESIGNER" (rect 2 0 59 12)(font "Arial" ))(text "Kevin Johnson, Tom Collins" (rect 56 2 286 20)(font "Arial" (font_size 12)))(border))
 	(section (rect 0 72 280 96)(text "NUMBER" (rect 2 0 49 12)(font "Arial" ))(text "1.00" (rect 56 1 85 17)(font "Arial" (font_size 10)))(border))
 	(section (rect 280 72 368 96)(text "REV" (rect 2 1 25 13)(font "Arial" ))(text "A" (rect 43 1 53 17)(font "Arial" (font_size 10)))(border))
-	(section (rect 0 96 240 120)(text "DATE" (rect 2 0 30 12)(font "Arial" ))(text "Sun Mar 23 18:45:11 2025" (rect 56 3 236 19)(font "Arial" (font_size 10)))(date)(border))
+	(section (rect 0 96 240 120)(text "DATE" (rect 2 0 30 12)(font "Arial" ))(text "Fri Mar 28 14:47:50 2025" (rect 56 3 227 19)(font "Arial" (font_size 10)))(date)(border))
 	(section (rect 240 96 310 120)(text "SHEET" (rect 2 0 37 12)(font "Arial" ))(text "1" (rect 55 5 63 21)(font "Arial" (font_size 10))))
 	(section (rect 310 96 368 120)(text "OF" (rect 10 0 25 12)(font "Arial" ))(text "1" (rect 34 4 42 20)(font "Arial" (font_size 10))))
 	(drawing

@@ -1,0 +1,36 @@
+WIDTH=16;
+DEPTH=2048;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+0000: 080C; -- 	LOAD	Total
+0001: 180E; -- 	ADD		Increment
+0002: 9806; --     OUT	    Bar
+0003: 9804; --     OUT		Hex0
+0004: 100C; --     STORE   Total
+0005: 8007; --     CALL    Delay
+0006: 2800; --     Jump 	loop
+0007: 9802; -- 	OUT    Timer
+0008: 9002; -- 	IN     Timer
+0009: 180D; -- 	ADD    DelayTime
+000A: 3008; -- 	JNEG   WaitingLoop
+000B: 8800; -- 	RETURN
+000C: 0000; -- Total:	   DW 0
+000D: FFF6; -- DelayTime: Dw -10
+000E: 1000; -- Increment: DW 4096
+000F: 0000; -- Time:	   Dw 0
+0010: 0000; -- Temp:	   DW 0
+0011: 0000; -- Res:	   DW 0
+0012: 0000; -- Count:	   DW 0
+0013: 0001; -- Bit0:      DW &amp;B0000000001
+0014: 0200; -- Bit9:      DW &amp;B1000000000
+0015: 0000; -- Zero:	   DW 0
+0016: 0001; -- One:	   DW 1
+0017: 0200; -- Nine:	   DW 512
+0018: 01FF; -- Mod:	   DW &amp;B0111111111
+0019: 0014; -- Twenty:	   DW 20
+[001A..07FF] : 0000; -- [empty memory]
+END;
+
