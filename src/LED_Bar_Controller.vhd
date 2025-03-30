@@ -104,7 +104,7 @@ begin
 			end if;
 			
 --		else
---			data_out <= hi_impedance;	-- Output is set to high impedance if the LED bar controller is not enabled
+--			data_out <= hi_impedance;	-- Output is set to high impedance if the LED bar controller is not enabled (Commented out, device doesn't work with this uncommented)
 		end if;
 		
 	end process;
