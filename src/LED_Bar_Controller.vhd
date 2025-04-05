@@ -2,22 +2,18 @@
 -- Controls the 10 LED's on the DE10 board to visually represent 16-bit values with a bar that fills up
 -- Updated 23MAR2025
 
--- Copying inclusions from SCOMP because I don't know what we need
-library altera_mf;
-library lpm;
+-- Inclusions
 library ieee;
 
-use altera_mf.altera_mf_components.all;
-use lpm.lpm_components.all;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
-use ieee.std_logic_arith.all;
+use ieee.numeric_std.all;
 
 -- Entity block defines the I/O of design; how the hardware will interface with the outside world
 entity LED_Bar_Controller is
 	port(
-	clock			:in	std_logic;			-- 100KHz Clock is used for PWM control of LED brightness
-	enable		:in	std_logic;			-- Signal from IO decoder to begin driving LED's
+	clock			:in	std_logic;								-- 100KHz Clock is used for PWM control of LED brightness
+	led_write	:in	std_logic;								-- Signal from IO decoder to change displayed value
+--	mv_write		:in	std_logic;								-- Signal from IO decoder to change max value
 	data_in		:in	std_logic_vector(15 downto 0);	-- 16-bit value from SCOMP
 	data_out		:out	std_logic_vector(15 downto 0) 	-- LED output
 	);
@@ -25,88 +21,83 @@ end LED_Bar_Controller;
 
 -- Architecture block defines the internal behavior/structure of entity
 architecture Behavior of LED_Bar_Controller is
-
-	signal hi_impedance : std_logic_vector(15 downto 0);
+	-- Typedef
+	type 		int_array is array(0 to 9) of integer;
+	
+	-- Signals (Variables)
+	signal 	led_order : int_array;							-- Array that holds the order the LED's will illuminate in
+	signal 	input_mag : integer;								-- Absolute value of input
+	signal	fade_led	 : integer;								-- Reflects which LED needs to be driven by PWM
+	signal	full_out	 : std_logic_vector(9 downto 0); -- Vector representing which LED's are being fully illuminated
+	signal	pwm_out	 : std_logic_vector(9 downto 0); -- Vector representing which LED's are being partially illuminated
+	signal	clk_count : integer := 0;
+	
+	-- Constants
+	constant max_val   : integer := 1000;					-- The input magnitude that will saturate the output
+	constant led_range : integer := (max_val / 10);		-- The range of values that one LED can display
 
 begin
-	-- Generic map block is used similarly to a '#define' section in conventional programming languages
-	--generic map(
-	--);
-	
-	-- Port map is used to connect components inside an architecture
-	--port map(
-	--);
-	
-	-- Process block defines actual behavior
-	-- This process maps an unsigned 16-bit value to the 10 LED's without fading
-	process(enable, data_in)
+	-- This process only runs when a value is written to the LED bar
+	process(led_write)
 	begin
-		if(enable = '1') then
-		
-			if(data_in > 0) then
-				data_out(0) <= '1';
+		-- Only update the LED values when led_write is high
+		if(led_write = '1') then
+			-- Calculate absolute value of input
+			input_mag <= abs(to_integer(signed(data_in)));
+			-- Swap the illumination order if input is negative
+			if(data_in(15) = '0') then
+				led_order <= (9, 8, 7, 6, 5, 4, 3, 2, 1, 0);
 			else
-				data_out(0) <= '0';
-			end if;
-			
-			if(data_in > 6553) then
-				data_out(1) <= '1';
-			else
-				data_out(1) <= '0';
-			end if;
-		
-			if(data_in > 13106) then
-				data_out(2) <= '1';
-			else
-				data_out(2) <= '0';
-			end if;
-			
-			if(data_in > 19659) then
-				data_out(3) <= '1';
-			else
-				data_out(3) <= '0';
-			end if;
-			
-			if(data_in > 26212) then
-				data_out(4) <= '1';
-			else
-				data_out(4) <= '0';
-			end if;
-			
-			if(data_in > 32765) then
-				data_out(5) <= '1';
-			else
-				data_out(5) <= '0';
-			end if;
-			
-			if(data_in > 39318) then
-				data_out(6) <= '1';
-			else
-				data_out(6) <= '0';
-			end if;
-			
-			if(data_in > 45871) then
-				data_out(7) <= '1';
-			else
-				data_out(7) <= '0';
-			end if;
-			
-			if(data_in > 52424) then
-				data_out(8) <= '1';
-			else
-				data_out(8) <= '0';
-			end if;
-			
-			if(data_in > 58977) then
-				data_out(9) <= '1';
-			else
-				data_out(9) <= '0';
-			end if;
-			
---		else
---			data_out <= hi_impedance;	-- Output is set to high impedance if the LED bar controller is not enabled (Commented out, device doesn't work with this uncommented)
+				led_order <= (0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+			end if;	
+			-- For loop creates parallel circuitry for each LED
+			for i in 0 to 9 loop
+				-- Determine which LED's are fully-illuminated
+				if(input_mag >= led_range*(i+1)) then
+					full_out(led_order(i)) <= '1';
+				else
+					-- Don't drive LED if it isn't fully illuminated to allow PWM to drive
+					full_out(led_order(i)) <= '0';
+					-- If LED isn't illuminated, check if the input lies in its range
+					if(input_mag >= led_range*i) then
+						fade_led <= i;
+					end if;
+				end if;
+			end loop;
 		end if;
-		
 	end process;
-	hi_impedance <= (others => 'Z');
+	
+	-- This process controls the counter used by the PWM process
+	process(clock)
+	begin
+		-- Clk counter resets after 100 clocks
+		if rising_edge(clock) then
+			if(clk_count = led_range) then
+				clk_count <= 0;
+			else
+				clk_count <= clk_count + 1;
+			end if;
+		end if;
+	end process;
+	
+	-- This process generates the PWM signal to control fade_led
+	process(clk_count)
+	begin
+		-- PWM output vector defaults to 0's for undriven components
+		pwm_out <= (others => '0');
+		-- Turn the LED on for longer amount of time the closer the input value gets to its threshold
+		if (input_mag mod led_range = 0 and input_mag /= 0) then
+			pwm_out(led_order(input_mag / led_range - 1)) <= '1';
+		else
+			if(clk_count <= input_mag mod led_range) then
+				pwm_out(led_order(fade_led)) <= '1';
+			else
+				pwm_out(led_order(fade_led)) <= '0';
+			end if;
+		end if;
+	end process;
+	
+	-- Combine fully and partially driven LED vectors into one output vector
+	data_out(9 downto 0) <= full_out or pwm_out;
+	
 end Behavior;

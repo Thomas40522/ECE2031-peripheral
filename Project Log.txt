@@ -2,16 +2,21 @@
 
 TODO LIST:
 (Just put 'DONE' in front of any completed items)
-- Flip LED display order
-- Clean up Quartus folder (remove unnecessary files)
-- Add signal to indicate whether 'data_in' is negative or positive, and add a signal for the absolute value of 'data_in'
-- Rework design to accept negative values (LED's 0-8 for positive, 9-1 for negative)
-- Implement PWM signal using clock divider:	Duty cycle (0-100%) = [|data_in|%(3,640)] / 3,640
-- Rework design to drive highest-valued LED with PWM signal
-- Figure out how to initialize/load gamma correction values in FPGA memory
+- [DONE 4/1] Flip LED display order
+- [DONE 4/1] Clean up Quartus folder (remove unnecessary files)
+- [DONE 4/1] Add signal to indicate whether 'data_in' is negative or positive, and add a signal for the absolute value of 'data_in'
+- [DONE 4/1] Rework design to accept negative values (LED's 0-8 for positive, 9-1 for negative)
+- [DONE 4/1] Implement PWM signal using clock divider:	Duty cycle (0-100%) = [|data_in|%(3,640)] / 3,640
+- [DONE 4/1] Rework design to drive highest-valued LED with PWM signal
+- [DONE 4/4] Make PWM fading look more gooder (Added 4/1)
+- [HALF 4/4] Fix LED blinking bug (Added 4/4)
+- Finish SCOMP-configurable max input value (Added 4/1)
+- Port project to project template from lab website (Added 4/4)
+- Add reset functionality (Added 4/4)
 - Edit PWM architecture to use gamma correction values
 - [DONE 3/28] Write simple SCOMP program that demonstrates LED Bar functionality
-- Restore functionality of DIG_OUT in SCOMP.bdf
+- Edit SCOMP program to initially set max input value for peripheral (Added 4/4)
+- Restore functionality of DIG_OUT in SCOMP.bdf (Not needed according to Kevin)
 
 
 LOGBOOK:
@@ -29,3 +34,19 @@ Benjamin Marshall 28MAR2025:
 - Resolved issue in SCOMP.bdf where DIG_IN block magically gained another input, input is still there but disconnected
 - Commented out statement in peripheral VHDL that was responsible for high impedance-ing LED's, because it was causing flashing
 - Disconnected DIG_OUT block from LED's bdf to resolve peripherals fighting over LED control, this needs to be fixed.
+
+Benjamin Marshall 1APR2025:
+- Reworked SCOMP driver program (bar_demo_4.mif) to have variable increments (positive or negative)
+- Removed pointless quartus files and library inclusions in VHDL
+- Added new input for setting max value (not implemented yet), renamed existing input, and fixed BDF
+- Flipped LED's to illuminate in the correct order
+- Cleaned up VHDL a lot and added comments (Replaced chained ifs with for loops)
+- Parameterized max input value and LED thresholds
+- Made the peripheral able to display negative values (uses 10 LED's instead of the previously discussed 9)
+- Implemented second process for PWM generator, but this doesn't fade smoothly yet
+
+Benjamin/Feiyang 4APR2025:
+- Got PWM fading to work correctly (clk_count wasn't being initialized to zero)
+- Tried to fix the LED blinking bug. Now it is halfway fixed, as long as the program output to the peripheral everytime when it increment by 1, the blinking problem woudln't occur.
+- However, this problem is only fixed for positive number, the problem still exist when it moves from right to left
+- The reason causing it is that when we mod input magnitude by the interval, when the input magnitude is equal to the interval, the result is 0, leading the led to not light up.
