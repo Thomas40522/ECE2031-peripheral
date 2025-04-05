@@ -1,0 +1,46 @@
+WIDTH=16;
+DEPTH=2048;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+0000: 9000; -- 	IN		Switches
+0001: 1018; --     STORE	Increment
+0002: 6019; --     SHIFT	-9
+0003: 400A; --     JZERO	Positive
+0004: 0818; --     LOAD	Increment
+0005: 201E; --     SUB		Bit9
+0006: 1018; --     STORE	Increment
+0007: 0816; -- 	LOAD	Total
+0008: 2018; --     SUB		Increment
+0009: 280C; --     JUMP	Display
+000A: 0816; -- 	LOAD	Total
+000B: 1818; -- 	ADD		Increment
+000C: 9806; --     OUT	    Bar
+000D: 9804; --     OUT		Hex0
+000E: 1016; --     STORE   Total
+000F: 8011; --     CALL    Delay
+0010: 2800; --     JUMP 	loop
+0011: 9802; -- 	OUT    Timer
+0012: 9002; -- 	IN     Timer
+0013: 1817; -- 	ADD    DelayTime
+0014: 3012; -- 	JNEG   WaitingLoop
+0015: 8800; -- 	RETURN
+0016: 0000; -- Total:	   DW 0
+0017: FFFF; -- DelayTime: Dw -1
+0018: 0000; -- Increment: DW 0
+0019: 0000; -- Time:	   Dw 0
+001A: 0000; -- Temp:	   DW 0
+001B: 0000; -- Res:	   DW 0
+001C: 0000; -- Count:	   DW 0
+001D: 0001; -- Bit0:      DW &amp;B0000000001
+001E: 0200; -- Bit9:      DW &amp;B1000000000
+001F: 0000; -- Zero:	   DW 0
+0020: 0001; -- One:	   DW 1
+0021: 0200; -- Nine:	   DW 512
+0022: 01FF; -- Mod:	   DW &amp;B0111111111
+0023: 0014; -- Twenty:	   DW 20
+[0024..07FF] : 0000; -- [empty memory]
+END;
+
