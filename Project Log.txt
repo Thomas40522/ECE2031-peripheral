@@ -50,4 +50,3 @@ Benjamin/Feiyang 4APR2025:
 - Tried to fix the LED blinking bug. Now it is halfway fixed, as long as the program output to the peripheral everytime when it increment by 1, the blinking problem woudln't occur.
 - However, this problem is only fixed for positive number, the problem still exist when it moves from right to left
 - The reason causing it is that when we mod input magnitude by the interval, when the input magnitude is equal to the interval, the result is 0, leading the led to not light up.
-
