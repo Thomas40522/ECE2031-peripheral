@@ -15,7 +15,7 @@ TODO LIST:
 - Add reset functionality (Added 4/4)
 - Edit PWM architecture to use gamma correction values
 - [DONE 3/28] Write simple SCOMP program that demonstrates LED Bar functionality
-- Edit SCOMP program to initially set max input value for peripheral (Added 4/4)
+- [DONE 4/9]Edit SCOMP program to initially set max input value for peripheral (Added 4/4)
 - Restore functionality of DIG_OUT in SCOMP.bdf (Not needed according to Kevin)
 
 
