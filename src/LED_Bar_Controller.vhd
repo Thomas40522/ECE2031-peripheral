@@ -13,6 +13,7 @@ entity LED_Bar_Controller is
 	port(
 	clock			:in	std_logic;								-- 100KHz Clock is used for PWM control of LED brightness
 	led_write	:in	std_logic;								-- Signal from IO decoder to change displayed value
+	mval_write  :in   std_logic;
 --	mv_write		:in	std_logic;								-- Signal from IO decoder to change max value
 	data_in		:in	std_logic_vector(15 downto 0);	-- 16-bit value from SCOMP
 	data_out		:out	std_logic_vector(15 downto 0) 	-- LED output
@@ -31,14 +32,16 @@ architecture Behavior of LED_Bar_Controller is
 	signal	full_out	 : std_logic_vector(9 downto 0); -- Vector representing which LED's are being fully illuminated
 	signal	pwm_out	 : std_logic_vector(9 downto 0); -- Vector representing which LED's are being partially illuminated
 	signal	clk_count : integer := 0;
+	signal   max_val   : integer := 1000;
+	signal   led_range : integer := (max_val / 10);
 	
 	-- Constants
-	constant max_val   : integer := 1000;					-- The input magnitude that will saturate the output
-	constant led_range : integer := (max_val / 10);		-- The range of values that one LED can display
+	--constant max_val   : integer := 1000;					-- The input magnitude that will saturate the output
+	--constant led_range : integer := (max_val / 10);		-- The range of values that one LED can display
 
 begin
 	-- This process only runs when a value is written to the LED bar
-	process(led_write)
+	process(led_write, mval_write)
 	begin
 		-- Only update the LED values when led_write is high
 		if(led_write = '1') then
@@ -64,6 +67,8 @@ begin
 					end if;
 				end if;
 			end loop;
+		elsif (mval_write = '1') then
+			max_val <= abs(to_integer(signed(data_in)));
 		end if;
 	end process;
 	
