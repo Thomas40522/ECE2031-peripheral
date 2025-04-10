@@ -10,7 +10,7 @@ TODO LIST:
 - [DONE 4/1] Rework design to drive highest-valued LED with PWM signal
 - [DONE 4/4] Make PWM fading look more gooder (Added 4/1)
 - [HALF 4/4] Fix LED blinking bug (Added 4/4)
-- Finish SCOMP-configurable max input value (Added 4/1)
+- [DONE 4/9] Finish SCOMP-configurable max input value (Added 4/1)
 - Port project to project template from lab website (Added 4/4)
 - Add reset functionality (Added 4/4)
 - Edit PWM architecture to use gamma correction values
