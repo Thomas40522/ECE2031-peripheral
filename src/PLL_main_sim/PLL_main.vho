@@ -1,8 +1,8 @@
 --IP Functional Simulation Model
---VERSION_BEGIN 20.1 cbx_mgl 2020:11:11:17:08:38:SJ cbx_simgen 2020:11:11:17:06:46:SJ  VERSION_END
+--VERSION_BEGIN 19.1 cbx_mgl 2019:09:22:11:02:15:SJ cbx_simgen 2019:09:22:11:00:28:SJ  VERSION_END
 
 
--- Copyright (C) 2020  Intel Corporation. All rights reserved.
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
 -- Your use of Intel Corporation's design tools, logic functions 
 -- and other software and tools, and any partner logic 
 -- functions, and any output files from any of the foregoing 
@@ -36,6 +36,8 @@
 	 ( 
 		 locked	:	OUT  STD_LOGIC;
 		 outclk_0	:	OUT  STD_LOGIC;
+		 outclk_1	:	OUT  STD_LOGIC;
+		 outclk_2	:	OUT  STD_LOGIC;
 		 refclk	:	IN  STD_LOGIC;
 		 rst	:	IN  STD_LOGIC
 	 ); 
@@ -46,35 +48,37 @@
 	 ATTRIBUTE synthesis_clearbox : natural;
 	 ATTRIBUTE synthesis_clearbox OF RTL : ARCHITECTURE IS 1;
 	 SIGNAL  wire_gnd	:	STD_LOGIC;
-	 SIGNAL  wire_pll_main_altera_pll_altera_pll_i_639_locked	:	STD_LOGIC;
-	 SIGNAL  wire_pll_main_altera_pll_altera_pll_i_639_outclk	:	STD_LOGIC_VECTOR (0 DOWNTO 0);
+	 SIGNAL  wire_pll_main_altera_pll_altera_pll_i_314_locked	:	STD_LOGIC;
+	 SIGNAL  wire_pll_main_altera_pll_altera_pll_i_314_outclk	:	STD_LOGIC_VECTOR (2 DOWNTO 0);
  BEGIN
 
 	wire_gnd <= '0';
-	locked <= wire_pll_main_altera_pll_altera_pll_i_639_locked;
-	outclk_0 <= wire_pll_main_altera_pll_altera_pll_i_639_outclk(0);
-	pll_main_altera_pll_altera_pll_i_639 :  altera_pll
+	locked <= wire_pll_main_altera_pll_altera_pll_i_314_locked;
+	outclk_0 <= wire_pll_main_altera_pll_altera_pll_i_314_outclk(0);
+	outclk_1 <= '0';
+	outclk_2 <= wire_pll_main_altera_pll_altera_pll_i_314_outclk(2);
+	pll_main_altera_pll_altera_pll_i_314 :  altera_pll
 	  GENERIC MAP (
 		c_cnt_bypass_en0 => "false",
 		c_cnt_bypass_en1 => "false",
-		c_cnt_bypass_en10 => "false",
-		c_cnt_bypass_en11 => "false",
-		c_cnt_bypass_en12 => "false",
-		c_cnt_bypass_en13 => "false",
-		c_cnt_bypass_en14 => "false",
-		c_cnt_bypass_en15 => "false",
-		c_cnt_bypass_en16 => "false",
-		c_cnt_bypass_en17 => "false",
+		c_cnt_bypass_en10 => "true",
+		c_cnt_bypass_en11 => "true",
+		c_cnt_bypass_en12 => "true",
+		c_cnt_bypass_en13 => "true",
+		c_cnt_bypass_en14 => "true",
+		c_cnt_bypass_en15 => "true",
+		c_cnt_bypass_en16 => "true",
+		c_cnt_bypass_en17 => "true",
 		c_cnt_bypass_en2 => "false",
-		c_cnt_bypass_en3 => "false",
-		c_cnt_bypass_en4 => "false",
-		c_cnt_bypass_en5 => "false",
-		c_cnt_bypass_en6 => "false",
-		c_cnt_bypass_en7 => "false",
-		c_cnt_bypass_en8 => "false",
-		c_cnt_bypass_en9 => "false",
-		c_cnt_hi_div0 => 1,
-		c_cnt_hi_div1 => 1,
+		c_cnt_bypass_en3 => "true",
+		c_cnt_bypass_en4 => "true",
+		c_cnt_bypass_en5 => "true",
+		c_cnt_bypass_en6 => "true",
+		c_cnt_bypass_en7 => "true",
+		c_cnt_bypass_en8 => "true",
+		c_cnt_bypass_en9 => "true",
+		c_cnt_hi_div0 => 13,
+		c_cnt_hi_div1 => 125,
 		c_cnt_hi_div10 => 1,
 		c_cnt_hi_div11 => 1,
 		c_cnt_hi_div12 => 1,
@@ -83,7 +87,7 @@
 		c_cnt_hi_div15 => 1,
 		c_cnt_hi_div16 => 1,
 		c_cnt_hi_div17 => 1,
-		c_cnt_hi_div2 => 1,
+		c_cnt_hi_div2 => 2,
 		c_cnt_hi_div3 => 1,
 		c_cnt_hi_div4 => 1,
 		c_cnt_hi_div5 => 1,
@@ -101,7 +105,7 @@
 		c_cnt_in_src15 => "ph_mux_clk",
 		c_cnt_in_src16 => "ph_mux_clk",
 		c_cnt_in_src17 => "ph_mux_clk",
-		c_cnt_in_src2 => "ph_mux_clk",
+		c_cnt_in_src2 => "cscd_clk",
 		c_cnt_in_src3 => "ph_mux_clk",
 		c_cnt_in_src4 => "ph_mux_clk",
 		c_cnt_in_src5 => "ph_mux_clk",
@@ -109,8 +113,8 @@
 		c_cnt_in_src7 => "ph_mux_clk",
 		c_cnt_in_src8 => "ph_mux_clk",
 		c_cnt_in_src9 => "ph_mux_clk",
-		c_cnt_lo_div0 => 1,
-		c_cnt_lo_div1 => 1,
+		c_cnt_lo_div0 => 12,
+		c_cnt_lo_div1 => 125,
 		c_cnt_lo_div10 => 1,
 		c_cnt_lo_div11 => 1,
 		c_cnt_lo_div12 => 1,
@@ -127,7 +131,7 @@
 		c_cnt_lo_div7 => 1,
 		c_cnt_lo_div8 => 1,
 		c_cnt_lo_div9 => 1,
-		c_cnt_odd_div_duty_en0 => "false",
+		c_cnt_odd_div_duty_en0 => "true",
 		c_cnt_odd_div_duty_en1 => "false",
 		c_cnt_odd_div_duty_en10 => "false",
 		c_cnt_odd_div_duty_en11 => "false",
@@ -137,7 +141,7 @@
 		c_cnt_odd_div_duty_en15 => "false",
 		c_cnt_odd_div_duty_en16 => "false",
 		c_cnt_odd_div_duty_en17 => "false",
-		c_cnt_odd_div_duty_en2 => "false",
+		c_cnt_odd_div_duty_en2 => "true",
 		c_cnt_odd_div_duty_en3 => "false",
 		c_cnt_odd_div_duty_en4 => "false",
 		c_cnt_odd_div_duty_en5 => "false",
@@ -221,18 +225,18 @@
 		duty_cycle9 => 50,
 		fractional_vco_multiplier => "false",
 		m_cnt_bypass_en => "false",
-		m_cnt_hi_div => 1,
-		m_cnt_lo_div => 1,
+		m_cnt_hi_div => 3,
+		m_cnt_lo_div => 3,
 		m_cnt_odd_div_duty_en => "false",
-		mimic_fbclk_type => "gclk",
-		n_cnt_bypass_en => "false",
-		n_cnt_hi_div => 1,
-		n_cnt_lo_div => 1,
+		mimic_fbclk_type => "none",
+		n_cnt_bypass_en => "true",
+		n_cnt_hi_div => 256,
+		n_cnt_lo_div => 256,
 		n_cnt_odd_div_duty_en => "false",
-		number_of_clocks => 1,
+		number_of_clocks => 3,
 		operation_mode => "direct",
-		output_clock_frequency0 => "10.000000 MHz",
-		output_clock_frequency1 => "0 MHz",
+		output_clock_frequency0 => "12.000000 MHz",
+		output_clock_frequency1 => "1.200000 MHz",
 		output_clock_frequency10 => "0 MHz",
 		output_clock_frequency11 => "0 MHz",
 		output_clock_frequency12 => "0 MHz",
@@ -241,7 +245,7 @@
 		output_clock_frequency15 => "0 MHz",
 		output_clock_frequency16 => "0 MHz",
 		output_clock_frequency17 => "0 MHz",
-		output_clock_frequency2 => "0 MHz",
+		output_clock_frequency2 => "100.000000 MHz",
 		output_clock_frequency3 => "0 MHz",
 		output_clock_frequency4 => "0 MHz",
 		output_clock_frequency5 => "0 MHz",
@@ -269,26 +273,26 @@
 		phase_shift9 => "0 ps",
 		pll_auto_clk_sw_en => "false",
 		pll_bw_sel => "low",
-		pll_bwctrl => 0,
+		pll_bwctrl => 2000,
 		pll_clk_loss_sw_en => "false",
 		pll_clk_sw_dly => 0,
 		pll_clkin_0_src => "clk_0",
 		pll_clkin_1_src => "clk_0",
-		pll_cp_current => 0,
+		pll_cp_current => 20,
 		pll_dsm_out_sel => "1st_order",
 		pll_extclk_0_cnt_src => "pll_extclk_cnt_src_vss",
 		pll_extclk_1_cnt_src => "pll_extclk_cnt_src_vss",
 		pll_fbclk_mux_1 => "glb",
-		pll_fbclk_mux_2 => "fb_1",
-		pll_fractional_cout => 24,
+		pll_fbclk_mux_2 => "m_cnt",
+		pll_fractional_cout => 32,
 		pll_fractional_division => 1,
 		pll_m_cnt_in_src => "ph_mux_clk",
 		pll_manu_clk_sw_en => "false",
-		pll_output_clk_frequency => "0 MHz",
+		pll_output_clk_frequency => "300.0 MHz",
 		pll_slf_rst => "false",
 		pll_subtype => "General",
-		pll_type => "General",
-		pll_vco_div => 1,
+		pll_type => "Cyclone V",
+		pll_vco_div => 2,
 		pll_vcoph_div => 1,
 		refclk1_frequency => "0 MHz",
 		reference_clock_frequency => "50.0 MHz",
@@ -296,8 +300,8 @@
 	  )
 	  PORT MAP ( 
 		fbclk => wire_gnd,
-		locked => wire_pll_main_altera_pll_altera_pll_i_639_locked,
-		outclk => wire_pll_main_altera_pll_altera_pll_i_639_outclk,
+		locked => wire_pll_main_altera_pll_altera_pll_i_314_locked,
+		outclk => wire_pll_main_altera_pll_altera_pll_i_314_outclk,
 		refclk => refclk,
 		rst => rst
 	  );

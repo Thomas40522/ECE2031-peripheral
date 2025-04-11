@@ -11,8 +11,10 @@ use ieee.numeric_std.all;
 -- Entity block defines the I/O of design; how the hardware will interface with the outside world
 entity LED_Bar_Controller is
 	port(
+	resetn      :in   std_logic;
 	clock			:in	std_logic;								-- 100KHz Clock is used for PWM control of LED brightness
 	led_write	:in	std_logic;								-- Signal from IO decoder to change displayed value
+	mval_write  :in   std_logic;
 --	mv_write		:in	std_logic;								-- Signal from IO decoder to change max value
 	data_in		:in	std_logic_vector(15 downto 0);	-- 16-bit value from SCOMP
 	data_out		:out	std_logic_vector(15 downto 0) 	-- LED output
@@ -23,6 +25,7 @@ end LED_Bar_Controller;
 architecture Behavior of LED_Bar_Controller is
 	-- Typedef
 	type 		int_array is array(0 to 9) of integer;
+	type gamma_array is array(0 to 255) of integer;
 	
 	-- Signals (Variables)
 	signal 	led_order : int_array;							-- Array that holds the order the LED's will illuminate in
@@ -31,17 +34,39 @@ architecture Behavior of LED_Bar_Controller is
 	signal	full_out	 : std_logic_vector(9 downto 0); -- Vector representing which LED's are being fully illuminated
 	signal	pwm_out	 : std_logic_vector(9 downto 0); -- Vector representing which LED's are being partially illuminated
 	signal	clk_count : integer := 0;
+	signal   max_val   : integer := 1000;
+	signal   led_range : integer := (max_val / 10);
 	
 	-- Constants
-	constant max_val   : integer := 1000;					-- The input magnitude that will saturate the output
-	constant led_range : integer := (max_val / 10);		-- The range of values that one LED can display
+	constant gamma_table : gamma_array := (
+0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,
+1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,
+2,  3,  3,  3,  3,  3,  3,  3,  4,  4,  4,  4,  4,  5,  5,  5,
+5,  6,  6,  6,  6,  7,  7,  7,  7,  8,  8,  8,  9,  9,  9, 10,
+10, 10, 11, 11, 11, 12, 12, 13, 13, 13, 14, 14, 15, 15, 16, 16,
+17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 24, 24, 25,
+25, 26, 27, 27, 28, 29, 29, 30, 31, 32, 32, 33, 34, 35, 35, 36,
+37, 38, 39, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 50,
+51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 66, 67, 68,
+69, 70, 72, 73, 74, 75, 77, 78, 79, 81, 82, 83, 85, 86, 87, 89,
+90, 92, 93, 95, 96, 98, 99,101,102,104,105,107,109,110,112,114,
+115,117,119,120,122,124,126,127,129,131,133,135,137,138,140,142,
+144,146,148,150,152,154,156,158,160,162,164,167,169,171,173,175,
+177,180,182,184,186,189,191,193,196,198,200,203,205,208,210,213,
+215,218,220,223,225,228,231,233,236,239,241,244,247,249,252,255
 
+):
+	
 begin
 	-- This process only runs when a value is written to the LED bar
-	process(led_write)
+	process(led_write, mval_write, resetn)
 	begin
+		if(resetn = '0') then
+			input_mag <= 0;
+			full_out <= "0000000000";
 		-- Only update the LED values when led_write is high
-		if(led_write = '1') then
+		elsif(led_write = '1') then
 			-- Calculate absolute value of input
 			input_mag <= abs(to_integer(signed(data_in)));
 			-- Swap the illumination order if input is negative
@@ -64,6 +89,8 @@ begin
 					end if;
 				end if;
 			end loop;
+		elsif (mval_write = '1') then
+			max_val <= abs(to_integer(signed(data_in)));
 		end if;
 	end process;
 	
@@ -72,7 +99,7 @@ begin
 	begin
 		-- Clk counter resets after 100 clocks
 		if rising_edge(clock) then
-			if(clk_count = led_range) then
+			if(clk_count >= led_range) then
 				clk_count <= 0;
 			else
 				clk_count <= clk_count + 1;
@@ -81,15 +108,17 @@ begin
 	end process;
 	
 	-- This process generates the PWM signal to control fade_led
-	process(clk_count)
+	process(clk_count, resetn)
 	begin
 		-- PWM output vector defaults to 0's for undriven components
 		pwm_out <= (others => '0');
+		if(resetn = '0') then
+			pwm_out <= "0000000000";
 		-- Turn the LED on for longer amount of time the closer the input value gets to its threshold
-		if (input_mag mod led_range = 0 and input_mag /= 0) then
+		elsif (input_mag mod led_range = 0 and input_mag /= 0) then
 			pwm_out(led_order(input_mag / led_range - 1)) <= '1';
 		else
-			if(clk_count <= input_mag mod led_range) then
+			if(clk_count < input_mag mod led_range) then
 				pwm_out(led_order(fade_led)) <= '1';
 			else
 				pwm_out(led_order(fade_led)) <= '0';

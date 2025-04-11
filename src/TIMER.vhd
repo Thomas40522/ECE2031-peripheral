@@ -55,7 +55,11 @@ ARCHITECTURE a OF TIMER IS
 		END IF;
 	END PROCESS;
 	
-	-- Don't change IO_COUNT if an IO operation is occuring
+	-- Don't change IO_COUNT if an IO operation is occuring.
+	-- This is still technically unsafe because it just moves
+	-- the potential timing hazards to this latch instead of
+	-- SCOMP's AC, but SCOMP and this timer are also technically
+	-- in the same clock domain, so it won't cause problems.
 	PROCESS (CS, COUNT, IO_COUNT)
 	BEGIN
 		IF CS = '0' THEN
