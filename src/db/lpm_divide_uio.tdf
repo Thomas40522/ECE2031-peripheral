@@ -21,7 +21,7 @@
 FUNCTION abs_divider_4dg (denominator[31..0], numerator[31..0])
 RETURNS ( quotient[31..0], remainder[31..0]);
 
---synthesis_resources = lut 688 
+--synthesis_resources = 
 SUBDESIGN lpm_divide_uio
 ( 
 	denom[31..0]	:	input;

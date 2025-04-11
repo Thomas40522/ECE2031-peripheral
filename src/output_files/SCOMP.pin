@@ -321,8 +321,8 @@ RESERVED_INPUT               : AG30      :        :                   :         
 GND                          : AH1       : gnd    :                   :         :           :                
 RESERVED_INPUT               : AH2       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AH3       :        :                   :         : 3A        :                
-RESERVED_INPUT               : AH4       :        :                   :         : 3A        :                
-RESERVED_INPUT               : AH5       :        :                   :         : 3A        :                
+TPs[2]                       : AH4       : output : 3.3-V LVTTL       :         : 3A        : Y              
+TPs[3]                       : AH5       : output : 3.3-V LVTTL       :         : 3A        : Y              
 GND                          : AH6       : gnd    :                   :         :           :                
 RESERVED_INPUT               : AH7       :        :                   :         : 3B        :                
 RESERVED_INPUT               : AH8       :        :                   :         : 3B        :                
@@ -378,7 +378,7 @@ RESERVED_INPUT               : AJ27      :        :                   :         
 GND                          : AJ28      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AJ29      :        :                   :         : 5A        :                
 GND                          : AJ30      : gnd    :                   :         :           :                
-RESERVED_INPUT               : AK2       :        :                   :         : 3B        :                
+TPs[1]                       : AK2       : output : 3.3-V LVTTL       :         : 3B        : Y              
 RESERVED_INPUT               : AK3       :        :                   :         : 3B        :                
 RESERVED_INPUT               : AK4       :        :                   :         : 3B        :                
 GND                          : AK5       : gnd    :                   :         :           :                
@@ -930,7 +930,7 @@ GND                          : W11       : gnd    :                   :         
 VCC                          : W12       : power  :                   : 1.1V    :           :                
 GND                          : W13       : gnd    :                   :         :           :                
 VCC                          : W14       : power  :                   : 1.1V    :           :                
-RESERVED_INPUT               : W15       :        :                   :         : 3B        :                
+TPs[0]                       : W15       : output : 3.3-V LVTTL       :         : 3B        : Y              
 HEX2[6]                      : W16       : output : 3.3-V LVTTL       :         : 4A        : Y              
 HEX0[0]                      : W17       : output : 3.3-V LVTTL       :         : 4A        : Y              
 GND                          : W18       : gnd    :                   :         :           :                
