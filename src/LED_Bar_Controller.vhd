@@ -33,6 +33,7 @@ architecture Behavior of LED_Bar_Controller is
 	signal	fade_led	 : integer;								-- Reflects which LED needs to be driven by PWM
 	signal	full_out	 : std_logic_vector(9 downto 0); -- Vector representing which LED's are being fully illuminated
 	signal	pwm_out	 : std_logic_vector(9 downto 0); -- Vector representing which LED's are being partially illuminated
+	signal   brightness_index : integer := 0;
 	signal	clk_count : integer := 0;
 	signal   max_val   : integer := 1000;
 	signal   led_range : integer := (max_val / 10);
@@ -56,7 +57,7 @@ architecture Behavior of LED_Bar_Controller is
 177,180,182,184,186,189,191,193,196,198,200,203,205,208,210,213,
 215,218,220,223,225,228,231,233,236,239,241,244,247,249,252,255
 
-):
+);
 	
 begin
 	-- This process only runs when a value is written to the LED bar
@@ -99,7 +100,7 @@ begin
 	begin
 		-- Clk counter resets after 100 clocks
 		if rising_edge(clock) then
-			if(clk_count >= led_range) then
+			if(clk_count >= 255) then
 				clk_count <= 0;
 			else
 				clk_count <= clk_count + 1;
@@ -118,7 +119,13 @@ begin
 		elsif (input_mag mod led_range = 0 and input_mag /= 0) then
 			pwm_out(led_order(input_mag / led_range - 1)) <= '1';
 		else
-			if(clk_count < input_mag mod led_range) then
+			--if(clk_count < input_mag mod led_range) then
+			brightness_index <= ((input_mag mod led_range) * 255) / led_range;
+         if (brightness_index > 255) then
+             brightness_index <= 255;
+         end if;
+			
+			if(clk_count < gamma_table(brightness_index)) then
 				pwm_out(led_order(fade_led)) <= '1';
 			else
 				pwm_out(led_order(fade_led)) <= '0';

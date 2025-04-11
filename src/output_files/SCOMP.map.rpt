@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Fri Apr 11 14:27:17 2025
+Fri Apr 11 14:56:44 2025
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,12 +41,13 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  33. Parameter Settings for Inferred Entity Instance: LED_Bar_Controller:inst11|lpm_divide:Div0
  34. Parameter Settings for Inferred Entity Instance: LED_Bar_Controller:inst11|lpm_divide:Div1
  35. Parameter Settings for Inferred Entity Instance: LED_Bar_Controller:inst11|lpm_divide:Mod0
- 36. altsyncram Parameter Settings by Entity Instance
- 37. Signal Tap Logic Analyzer Settings
- 38. Post-Synthesis Netlist Statistics for Top Partition
- 39. Elapsed Time Per Partition
- 40. Connections to In-System Debugging Instance "auto_signaltap_0"
- 41. Analysis & Synthesis Messages
+ 36. Parameter Settings for Inferred Entity Instance: LED_Bar_Controller:inst11|lpm_divide:Div2
+ 37. altsyncram Parameter Settings by Entity Instance
+ 38. Signal Tap Logic Analyzer Settings
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 42. Analysis & Synthesis Messages
 
 
 
@@ -73,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Apr 11 14:27:17 2025       ;
+; Analysis & Synthesis Status     ; Successful - Fri Apr 11 14:56:44 2025       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SCOMP                                       ;
 ; Top-level Entity Name           ; SCOMP_System                                ;
@@ -303,14 +304,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 2276                     ;
+; Estimate of Logic utilization (ALMs needed) ; 2876                     ;
 ;                                             ;                          ;
-; Combinational ALUT usage for logic          ; 4020                     ;
-;     -- 7 input functions                    ; 9                        ;
-;     -- 6 input functions                    ; 299                      ;
-;     -- 5 input functions                    ; 715                      ;
-;     -- 4 input functions                    ; 1063                     ;
-;     -- <=3 input functions                  ; 1934                     ;
+; Combinational ALUT usage for logic          ; 5329                     ;
+;     -- 7 input functions                    ; 6                        ;
+;     -- 6 input functions                    ; 194                      ;
+;     -- 5 input functions                    ; 1005                     ;
+;     -- 4 input functions                    ; 1544                     ;
+;     -- <=3 input functions                  ; 2580                     ;
 ;                                             ;                          ;
 ; Dedicated logic registers                   ; 782                      ;
 ;                                             ;                          ;
@@ -325,8 +326,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 341                      ;
-; Total fan-out                               ; 18333                    ;
-; Average fan-out                             ; 3.69                     ;
+; Total fan-out                               ; 23017                    ;
+; Average fan-out                             ; 3.67                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -335,7 +336,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                      ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |SCOMP_System                                                                                                                           ; 4020 (21)           ; 782 (0)                   ; 45056             ; 0          ; 68   ; 0            ; |SCOMP_System                                                                                                                                                                                                                                                                                                                                            ; SCOMP_System                      ; work         ;
+; |SCOMP_System                                                                                                                           ; 5329 (21)           ; 782 (0)                   ; 45056             ; 0          ; 68   ; 0            ; |SCOMP_System                                                                                                                                                                                                                                                                                                                                            ; SCOMP_System                      ; work         ;
 ;    |DIG_IN:inst7|                                                                                                                       ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_IN:inst7                                                                                                                                                                                                                                                                                                                               ; DIG_IN                            ; work         ;
 ;    |HEX_DISP_6:inst9|                                                                                                                   ; 47 (5)              ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9                                                                                                                                                                                                                                                                                                                           ; HEX_DISP_6                        ; work         ;
 ;       |HEX_DISP:inst1|                                                                                                                  ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst1                                                                                                                                                                                                                                                                                                            ; HEX_DISP                          ; work         ;
@@ -345,7 +346,7 @@ https://fpgasoftware.intel.com/eula.
 ;       |HEX_DISP:inst5|                                                                                                                  ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst5                                                                                                                                                                                                                                                                                                            ; HEX_DISP                          ; work         ;
 ;       |HEX_DISP:inst6|                                                                                                                  ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst6                                                                                                                                                                                                                                                                                                            ; HEX_DISP                          ; work         ;
 ;    |IO_DECODER:inst3|                                                                                                                   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|IO_DECODER:inst3                                                                                                                                                                                                                                                                                                                           ; IO_DECODER                        ; work         ;
-;    |LED_Bar_Controller:inst11|                                                                                                          ; 3308 (592)          ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11                                                                                                                                                                                                                                                                                                                  ; LED_Bar_Controller                ; work         ;
+;    |LED_Bar_Controller:inst11|                                                                                                          ; 4614 (557)          ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11                                                                                                                                                                                                                                                                                                                  ; LED_Bar_Controller                ; work         ;
 ;       |lpm_divide:Div0|                                                                                                                 ; 194 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Div0                                                                                                                                                                                                                                                                                                  ; lpm_divide                        ; work         ;
 ;          |lpm_divide_bpo:auto_generated|                                                                                                ; 194 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Div0|lpm_divide_bpo:auto_generated                                                                                                                                                                                                                                                                    ; lpm_divide_bpo                    ; work         ;
 ;             |abs_divider_kbg:divider|                                                                                                   ; 194 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Div0|lpm_divide_bpo:auto_generated|abs_divider_kbg:divider                                                                                                                                                                                                                                            ; abs_divider_kbg                   ; work         ;
@@ -354,20 +355,25 @@ https://fpgasoftware.intel.com/eula.
 ;          |lpm_divide_rqo:auto_generated|                                                                                                ; 1231 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Div1|lpm_divide_rqo:auto_generated                                                                                                                                                                                                                                                                    ; lpm_divide_rqo                    ; work         ;
 ;             |abs_divider_4dg:divider|                                                                                                   ; 1231 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Div1|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                                                            ; abs_divider_4dg                   ; work         ;
 ;                |alt_u_div_o2f:divider|                                                                                                  ; 1231 (1231)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Div1|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider|alt_u_div_o2f:divider                                                                                                                                                                                                                      ; alt_u_div_o2f                     ; work         ;
-;       |lpm_divide:Mod0|                                                                                                                 ; 1291 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Mod0                                                                                                                                                                                                                                                                                                  ; lpm_divide                        ; work         ;
-;          |lpm_divide_uio:auto_generated|                                                                                                ; 1291 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Mod0|lpm_divide_uio:auto_generated                                                                                                                                                                                                                                                                    ; lpm_divide_uio                    ; work         ;
-;             |abs_divider_4dg:divider|                                                                                                   ; 1291 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Mod0|lpm_divide_uio:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                                                            ; abs_divider_4dg                   ; work         ;
-;                |alt_u_div_o2f:divider|                                                                                                  ; 1291 (1291)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Mod0|lpm_divide_uio:auto_generated|abs_divider_4dg:divider|alt_u_div_o2f:divider                                                                                                                                                                                                                      ; alt_u_div_o2f                     ; work         ;
+;       |lpm_divide:Div2|                                                                                                                 ; 1332 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Div2                                                                                                                                                                                                                                                                                                  ; lpm_divide                        ; work         ;
+;          |lpm_divide_rqo:auto_generated|                                                                                                ; 1332 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Div2|lpm_divide_rqo:auto_generated                                                                                                                                                                                                                                                                    ; lpm_divide_rqo                    ; work         ;
+;             |abs_divider_4dg:divider|                                                                                                   ; 1332 (32)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Div2|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                                                            ; abs_divider_4dg                   ; work         ;
+;                |alt_u_div_o2f:divider|                                                                                                  ; 1268 (1268)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Div2|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider|alt_u_div_o2f:divider                                                                                                                                                                                                                      ; alt_u_div_o2f                     ; work         ;
+;                |lpm_abs_4p9:my_abs_num|                                                                                                 ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Div2|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider|lpm_abs_4p9:my_abs_num                                                                                                                                                                                                                     ; lpm_abs_4p9                       ; work         ;
+;       |lpm_divide:Mod0|                                                                                                                 ; 1300 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Mod0                                                                                                                                                                                                                                                                                                  ; lpm_divide                        ; work         ;
+;          |lpm_divide_uio:auto_generated|                                                                                                ; 1300 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Mod0|lpm_divide_uio:auto_generated                                                                                                                                                                                                                                                                    ; lpm_divide_uio                    ; work         ;
+;             |abs_divider_4dg:divider|                                                                                                   ; 1300 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Mod0|lpm_divide_uio:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                                                            ; abs_divider_4dg                   ; work         ;
+;                |alt_u_div_o2f:divider|                                                                                                  ; 1300 (1300)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|LED_Bar_Controller:inst11|lpm_divide:Mod0|lpm_divide_uio:auto_generated|abs_divider_4dg:divider|alt_u_div_o2f:divider                                                                                                                                                                                                                      ; alt_u_div_o2f                     ; work         ;
 ;    |PLL_main:inst1|                                                                                                                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1                                                                                                                                                                                                                                                                                                                             ; PLL_main                          ; pll_main     ;
 ;       |PLL_main_0002:pll_main_inst|                                                                                                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst                                                                                                                                                                                                                                                                                                 ; PLL_main_0002                     ; PLL_main     ;
 ;          |altera_pll:altera_pll_i|                                                                                                      ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i                                                                                                                                                                                                                                                                         ; altera_pll                        ; work         ;
 ;             |altera_cyclonev_pll:cyclonev_pll|                                                                                          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll                                                                                                                                                                                                                                        ; altera_cyclonev_pll               ; work         ;
 ;                |altera_cyclonev_pll_base:fpll_0|                                                                                        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|altera_cyclonev_pll_base:fpll_0                                                                                                                                                                                                        ; altera_cyclonev_pll_base          ; work         ;
-;    |SCOMP:inst|                                                                                                                         ; 240 (196)           ; 179 (179)                 ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst                                                                                                                                                                                                                                                                                                                                 ; SCOMP                             ; work         ;
+;    |SCOMP:inst|                                                                                                                         ; 243 (198)           ; 179 (179)                 ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst                                                                                                                                                                                                                                                                                                                                 ; SCOMP                             ; work         ;
 ;       |altsyncram:altsyncram_component|                                                                                                 ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                                 ; altsyncram                        ; work         ;
 ;          |altsyncram_7m24:auto_generated|                                                                                               ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_7m24:auto_generated                                                                                                                                                                                                                                                                  ; altsyncram_7m24                   ; work         ;
-;       |lpm_clshift:shifter|                                                                                                             ; 44 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                                                                                                                                                                                                                                                                                             ; lpm_clshift                       ; work         ;
-;          |lpm_clshift_fuc:auto_generated|                                                                                               ; 44 (44)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                                                                                                                                                                                                                                                                              ; lpm_clshift_fuc                   ; work         ;
+;       |lpm_clshift:shifter|                                                                                                             ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                                                                                                                                                                                                                                                                                             ; lpm_clshift                       ; work         ;
+;          |lpm_clshift_fuc:auto_generated|                                                                                               ; 45 (45)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                                                                                                                                                                                                                                                                              ; lpm_clshift_fuc                   ; work         ;
 ;    |TIMER:inst4|                                                                                                                        ; 33 (33)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TIMER:inst4                                                                                                                                                                                                                                                                                                                                ; TIMER                             ; work         ;
 ;    |clk_div:inst5|                                                                                                                      ; 36 (36)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|clk_div:inst5                                                                                                                                                                                                                                                                                                                              ; clk_div                           ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 92 (1)              ; 90 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
@@ -494,94 +500,114 @@ Encoding Type:  One-Hot
 +------------------+---------------+--------------+--------------+-------------+----------------+--------------+-------------+--------------+---------------+-----------------+---------------+---------------+----------------+---------------+---------------+--------------+---------------+--------------+----------------+------------------+-----------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                      ;
-+-----------------------------------------------------+-------------------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal                       ; Free of Timing Hazards ;
-+-----------------------------------------------------+-------------------------------------------+------------------------+
-; LED_Bar_Controller:inst11|full_out[9]               ; LED_Bar_Controller:inst11|full_out[9]     ; yes                    ;
-; LED_Bar_Controller:inst11|fade_led[1]               ; LED_Bar_Controller:inst11|fade_led[3]     ; yes                    ;
-; LED_Bar_Controller:inst11|fade_led[2]               ; LED_Bar_Controller:inst11|fade_led[3]     ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[0][3]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[1][3]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[8][3]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[9][3]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|fade_led[0]               ; LED_Bar_Controller:inst11|fade_led[3]     ; yes                    ;
-; LED_Bar_Controller:inst11|fade_led[3]               ; LED_Bar_Controller:inst11|fade_led[3]     ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[2][2]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[3][2]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[6][2]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[7][2]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[0][0]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[1][0]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[2][0]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[3][0]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[4][0]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[5][0]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[6][0]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[7][0]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[8][0]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|led_order[9][0]           ; LED_Bar_Controller:inst11|led_order[9][0] ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[0]              ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[2]              ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[4]              ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[3]              ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[5]              ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[7]              ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[6]              ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[8]              ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[10]             ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[9]              ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[11]             ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[13]             ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[12]             ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[14]             ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[15]             ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|input_mag[1]              ; IO_DECODER:inst3|LEDBAR_EN                ; yes                    ;
-; LED_Bar_Controller:inst11|full_out[8]               ; LED_Bar_Controller:inst11|full_out[8]     ; yes                    ;
-; LED_Bar_Controller:inst11|full_out[7]               ; LED_Bar_Controller:inst11|full_out[7]     ; yes                    ;
-; LED_Bar_Controller:inst11|full_out[6]               ; LED_Bar_Controller:inst11|full_out[6]     ; yes                    ;
-; LED_Bar_Controller:inst11|full_out[5]               ; LED_Bar_Controller:inst11|full_out[5]     ; yes                    ;
-; LED_Bar_Controller:inst11|full_out[4]               ; LED_Bar_Controller:inst11|full_out[4]     ; yes                    ;
-; LED_Bar_Controller:inst11|full_out[3]               ; LED_Bar_Controller:inst11|full_out[3]     ; yes                    ;
-; LED_Bar_Controller:inst11|full_out[2]               ; LED_Bar_Controller:inst11|full_out[2]     ; yes                    ;
-; LED_Bar_Controller:inst11|full_out[1]               ; LED_Bar_Controller:inst11|full_out[1]     ; yes                    ;
-; LED_Bar_Controller:inst11|full_out[0]               ; LED_Bar_Controller:inst11|full_out[0]     ; yes                    ;
-; TIMER:inst4|IO_COUNT[0]                             ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[1]                             ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[2]                             ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[3]                             ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[4]                             ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[5]                             ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[6]                             ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[7]                             ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[8]                             ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[9]                             ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[10]                            ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[11]                            ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[12]                            ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[13]                            ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[14]                            ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; TIMER:inst4|IO_COUNT[15]                            ; IO_DECODER:inst3|TIMER_EN                 ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[15]               ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[14]               ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[13]               ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[12]               ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[11]               ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[10]               ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[9]                ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[8]                ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[7]                ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[6]                ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[5]                ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[4]                ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[3]                ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[2]                ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[1]                ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; LED_Bar_Controller:inst11|max_val[0]                ; LED_Bar_Controller:inst11|max_val[31]     ; yes                    ;
-; Number of user-specified and inferred latches = 80  ;                                           ;                        ;
-+-----------------------------------------------------+-------------------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++--------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                            ;
++------------------------------------------------------+------------------------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal                            ; Free of Timing Hazards ;
++------------------------------------------------------+------------------------------------------------+------------------------+
+; LED_Bar_Controller:inst11|full_out[9]                ; LED_Bar_Controller:inst11|full_out[9]          ; yes                    ;
+; LED_Bar_Controller:inst11|fade_led[1]                ; LED_Bar_Controller:inst11|fade_led[3]          ; yes                    ;
+; LED_Bar_Controller:inst11|fade_led[2]                ; LED_Bar_Controller:inst11|fade_led[3]          ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[0][3]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[1][3]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[8][3]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[9][3]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|fade_led[0]                ; LED_Bar_Controller:inst11|fade_led[3]          ; yes                    ;
+; LED_Bar_Controller:inst11|fade_led[3]                ; LED_Bar_Controller:inst11|fade_led[3]          ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[2][2]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[3][2]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[6][2]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[7][2]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[0][0]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[1][0]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[2][0]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[3][0]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[4][0]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[5][0]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[6][0]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[7][0]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[8][0]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|led_order[9][0]            ; LED_Bar_Controller:inst11|led_order[9][0]      ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[0]               ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[2]               ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[4]               ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[3]               ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[5]               ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[7]               ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[6]               ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[8]               ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[10]              ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[9]               ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[11]              ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[13]              ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[12]              ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[14]              ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[15]              ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|input_mag[1]               ; IO_DECODER:inst3|LEDBAR_EN                     ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[7]        ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[3]        ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[4]        ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[5]        ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[6]        ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[2]        ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[0]        ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[1]        ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|full_out[8]                ; LED_Bar_Controller:inst11|full_out[8]          ; yes                    ;
+; LED_Bar_Controller:inst11|full_out[7]                ; LED_Bar_Controller:inst11|full_out[7]          ; yes                    ;
+; LED_Bar_Controller:inst11|full_out[6]                ; LED_Bar_Controller:inst11|full_out[6]          ; yes                    ;
+; LED_Bar_Controller:inst11|full_out[5]                ; LED_Bar_Controller:inst11|full_out[5]          ; yes                    ;
+; LED_Bar_Controller:inst11|full_out[4]                ; LED_Bar_Controller:inst11|full_out[4]          ; yes                    ;
+; LED_Bar_Controller:inst11|full_out[3]                ; LED_Bar_Controller:inst11|full_out[3]          ; yes                    ;
+; LED_Bar_Controller:inst11|full_out[2]                ; LED_Bar_Controller:inst11|full_out[2]          ; yes                    ;
+; LED_Bar_Controller:inst11|full_out[1]                ; LED_Bar_Controller:inst11|full_out[1]          ; yes                    ;
+; LED_Bar_Controller:inst11|full_out[0]                ; LED_Bar_Controller:inst11|full_out[0]          ; yes                    ;
+; TIMER:inst4|IO_COUNT[0]                              ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[1]                              ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[2]                              ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[3]                              ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[4]                              ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[5]                              ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[6]                              ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[7]                              ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[8]                              ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[9]                              ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[10]                             ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[11]                             ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[12]                             ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[13]                             ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[14]                             ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; TIMER:inst4|IO_COUNT[15]                             ; IO_DECODER:inst3|TIMER_EN                      ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[31]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[30]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[29]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[28]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[27]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[26]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[25]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[24]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[23]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[22]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[21]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[20]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[19]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[18]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[17]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[16]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[15]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[14]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[13]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[12]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[11]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[10]       ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[9]        ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|brightness_index[8]        ; LED_Bar_Controller:inst11|brightness_index[31] ; yes                    ;
+; LED_Bar_Controller:inst11|max_val[15]                ; LED_Bar_Controller:inst11|max_val[31]          ; yes                    ;
+; LED_Bar_Controller:inst11|max_val[14]                ; LED_Bar_Controller:inst11|max_val[31]          ; yes                    ;
+; LED_Bar_Controller:inst11|max_val[13]                ; LED_Bar_Controller:inst11|max_val[31]          ; yes                    ;
+; LED_Bar_Controller:inst11|max_val[12]                ; LED_Bar_Controller:inst11|max_val[31]          ; yes                    ;
+; Number of user-specified and inferred latches = 112  ;                                                ;                        ;
++------------------------------------------------------+------------------------------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -686,11 +712,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 3:1                ; 99 bits   ; 198 LEs       ; 0 LEs                ; 198 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[4][1]            ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 0 LEs                ; 198 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[4][8]            ;
 ; 12:1               ; 11 bits   ; 88 LEs        ; 22 LEs               ; 66 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[5]                     ;
-; 13:1               ; 16 bits   ; 128 LEs       ; 112 LEs              ; 16 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[12]                    ;
+; 13:1               ; 16 bits   ; 128 LEs       ; 112 LEs              ; 16 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[15]                    ;
 ; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|LED_Bar_Controller:inst11|pwm_out[0] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[9]                           ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[8]                           ;
 ; 13:1               ; 16 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |SCOMP_System|SCOMP:inst|Add1                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 
@@ -1280,6 +1306,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LED_Bar_Controller:inst11|lpm_divide:Div2 ;
++------------------------+----------------+--------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                             ;
++------------------------+----------------+--------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                          ;
+; LPM_WIDTHD             ; 32             ; Untyped                                          ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                          ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                          ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
+; CBXI_PARAMETER         ; lpm_divide_rqo ; Untyped                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
++------------------------+----------------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                       ;
 +-------------------------------------------+--------------------------------------------+
@@ -1321,28 +1370,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD                 ; 99                    ;
 ;     SCLR                    ; 52                    ;
 ;     plain                   ; 20                    ;
-; arriav_lcell_comb           ; 3696                  ;
-;     arith                   ; 1461                  ;
-;         0 data inputs       ; 168                   ;
-;         1 data inputs       ; 132                   ;
-;         2 data inputs       ; 88                    ;
-;         3 data inputs       ; 190                   ;
-;         4 data inputs       ; 455                   ;
-;         5 data inputs       ; 428                   ;
-;     extend                  ; 8                     ;
-;         7 data inputs       ; 8                     ;
-;     normal                  ; 2189                  ;
+; arriav_lcell_comb           ; 5005                  ;
+;     arith                   ; 2136                  ;
+;         0 data inputs       ; 227                   ;
+;         1 data inputs       ; 156                   ;
+;         2 data inputs       ; 173                   ;
+;         3 data inputs       ; 274                   ;
+;         4 data inputs       ; 658                   ;
+;         5 data inputs       ; 648                   ;
+;     extend                  ; 5                     ;
+;         7 data inputs       ; 5                     ;
+;     normal                  ; 2817                  ;
 ;         0 data inputs       ; 1                     ;
 ;         1 data inputs       ; 7                     ;
-;         2 data inputs       ; 825                   ;
-;         3 data inputs       ; 329                   ;
-;         4 data inputs       ; 571                   ;
-;         5 data inputs       ; 218                   ;
-;         6 data inputs       ; 238                   ;
-;     shared                  ; 38                    ;
-;         0 data inputs       ; 18                    ;
+;         2 data inputs       ; 1129                  ;
+;         3 data inputs       ; 413                   ;
+;         4 data inputs       ; 846                   ;
+;         5 data inputs       ; 288                   ;
+;         6 data inputs       ; 133                   ;
+;     shared                  ; 47                    ;
+;         0 data inputs       ; 21                    ;
 ;         1 data inputs       ; 8                     ;
-;         2 data inputs       ; 12                    ;
+;         2 data inputs       ; 15                    ;
+;         4 data inputs       ; 3                     ;
 ; boundary_port               ; 69                    ;
 ; cyclonev_fractional_pll     ; 1                     ;
 ; cyclonev_pll_output_counter ; 1                     ;
@@ -1350,8 +1400,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cyclonev_pll_refclk_select  ; 1                     ;
 ; stratixv_ram_block          ; 16                    ;
 ;                             ;                       ;
-; Max LUT depth               ; 114.20                ;
-; Average LUT depth           ; 82.77                 ;
+; Max LUT depth               ; 209.10                ;
+; Average LUT depth           ; 143.02                ;
 +-----------------------------+-----------------------+
 
 
@@ -1360,7 +1410,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:12     ;
+; Top            ; 00:00:15     ;
 +----------------+--------------+
 
 
@@ -1417,7 +1467,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Fri Apr 11 14:26:44 2025
+    Info: Processing started: Fri Apr 11 14:56:08 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
@@ -1791,151 +1841,186 @@ Info (10041): Inferred latch for "IO_COUNT[14]" at TIMER.vhd(63) File: C:/Users/
 Info (10041): Inferred latch for "IO_COUNT[15]" at TIMER.vhd(63) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/TIMER.vhd Line: 63
 Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
 Info (12128): Elaborating entity "LED_Bar_Controller" for hierarchy "LED_Bar_Controller:inst11"
-Warning (10540): VHDL Signal Declaration warning at LED_Bar_Controller.vhd(37): used explicit default value for signal "led_range" because signal was never assigned a value File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 37
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(49): signal "data_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 49
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(51): signal "data_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 51
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(59): signal "input_mag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 59
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(59): signal "led_range" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 59
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(60): signal "led_order" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 60
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(63): signal "led_order" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 63
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(65): signal "input_mag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(65): signal "led_range" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(71): signal "data_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 71
-Warning (10631): VHDL Process Statement warning at LED_Bar_Controller.vhd(41): inferring latch(es) for signal or variable "input_mag", which holds its previous value in one or more paths through the process File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (10631): VHDL Process Statement warning at LED_Bar_Controller.vhd(41): inferring latch(es) for signal or variable "full_out", which holds its previous value in one or more paths through the process File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (10631): VHDL Process Statement warning at LED_Bar_Controller.vhd(41): inferring latch(es) for signal or variable "led_order", which holds its previous value in one or more paths through the process File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (10631): VHDL Process Statement warning at LED_Bar_Controller.vhd(41): inferring latch(es) for signal or variable "fade_led", which holds its previous value in one or more paths through the process File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (10631): VHDL Process Statement warning at LED_Bar_Controller.vhd(41): inferring latch(es) for signal or variable "max_val", which holds its previous value in one or more paths through the process File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(96): signal "input_mag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 96
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(96): signal "led_range" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 96
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(97): signal "led_order" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 97
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(97): signal "input_mag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 97
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(97): signal "led_range" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 97
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(99): signal "input_mag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 99
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(99): signal "led_range" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 99
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(100): signal "led_order" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 100
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(100): signal "fade_led" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 100
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(102): signal "led_order" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 102
-Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(102): signal "fade_led" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 102
+Warning (10540): VHDL Signal Declaration warning at LED_Bar_Controller.vhd(39): used explicit default value for signal "led_range" because signal was never assigned a value File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 39
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(72): signal "data_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(74): signal "data_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(82): signal "input_mag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 82
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(82): signal "led_range" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 82
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(83): signal "led_order" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(86): signal "led_order" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(88): signal "input_mag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(88): signal "led_range" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(94): signal "data_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 94
+Warning (10631): VHDL Process Statement warning at LED_Bar_Controller.vhd(64): inferring latch(es) for signal or variable "input_mag", which holds its previous value in one or more paths through the process File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at LED_Bar_Controller.vhd(64): inferring latch(es) for signal or variable "full_out", which holds its previous value in one or more paths through the process File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at LED_Bar_Controller.vhd(64): inferring latch(es) for signal or variable "led_order", which holds its previous value in one or more paths through the process File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at LED_Bar_Controller.vhd(64): inferring latch(es) for signal or variable "fade_led", which holds its previous value in one or more paths through the process File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at LED_Bar_Controller.vhd(64): inferring latch(es) for signal or variable "max_val", which holds its previous value in one or more paths through the process File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(119): signal "input_mag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 119
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(119): signal "led_range" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 119
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(120): signal "led_order" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(120): signal "input_mag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(120): signal "led_range" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(123): signal "input_mag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 123
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(123): signal "led_range" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 123
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(124): signal "brightness_index" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 124
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(128): signal "brightness_index" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 128
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(129): signal "led_order" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 129
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(129): signal "fade_led" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 129
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(131): signal "led_order" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 131
+Warning (10492): VHDL Process Statement warning at LED_Bar_Controller.vhd(131): signal "fade_led" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 131
+Warning (10631): VHDL Process Statement warning at LED_Bar_Controller.vhd(112): inferring latch(es) for signal or variable "brightness_index", which holds its previous value in one or more paths through the process File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
 Warning (10873): Using initial value X (don't care) for net "data_out[15..10]" at LED_Bar_Controller.vhd(20) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 20
-Info (10041): Inferred latch for "max_val[0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[4]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[5]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[6]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[7]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[8]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[9]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[10]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[11]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[12]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[13]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[14]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[15]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[16]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[17]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[18]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[19]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[20]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[21]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[22]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[23]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[24]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[25]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[26]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[27]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[28]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[29]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[30]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "max_val[31]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "fade_led[0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "fade_led[1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "fade_led[2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "fade_led[3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[9][0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[9][1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[9][2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[9][3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[8][0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[8][1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[8][2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[8][3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[7][0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[7][1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[7][2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[7][3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[6][0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[6][1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[6][2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[6][3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[5][0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[5][1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[5][2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[5][3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[4][0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[4][1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[4][2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[4][3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[3][0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[3][1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[3][2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[3][3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[2][0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[2][1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[2][2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[2][3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[1][0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[1][1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[1][2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[1][3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[0][0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[0][1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[0][2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "led_order[0][3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "full_out[0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "full_out[1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "full_out[2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "full_out[3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "full_out[4]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "full_out[5]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "full_out[6]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "full_out[7]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "full_out[8]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "full_out[9]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[0]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[1]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[2]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[3]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[4]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[5]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[6]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[7]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[8]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[9]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[10]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[11]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[12]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[13]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[14]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[15]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[16]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[17]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[18]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[19]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[20]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[21]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[22]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[23]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[24]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[25]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[26]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[27]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[28]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[29]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[30]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Info (10041): Inferred latch for "input_mag[31]" at LED_Bar_Controller.vhd(41) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
+Info (10041): Inferred latch for "brightness_index[0]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[1]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[2]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[3]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[4]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[5]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[6]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[7]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[8]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[9]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[10]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[11]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[12]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[13]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[14]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[15]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[16]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[17]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[18]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[19]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[20]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[21]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[22]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[23]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[24]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[25]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[26]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[27]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[28]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[29]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[30]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "brightness_index[31]" at LED_Bar_Controller.vhd(112) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 112
+Info (10041): Inferred latch for "max_val[0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[4]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[5]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[6]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[7]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[8]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[9]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[10]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[11]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[12]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[13]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[14]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[15]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[16]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[17]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[18]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[19]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[20]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[21]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[22]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[23]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[24]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[25]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[26]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[27]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[28]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[29]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[30]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "max_val[31]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "fade_led[0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "fade_led[1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "fade_led[2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "fade_led[3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[9][0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[9][1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[9][2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[9][3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[8][0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[8][1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[8][2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[8][3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[7][0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[7][1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[7][2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[7][3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[6][0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[6][1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[6][2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[6][3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[5][0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[5][1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[5][2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[5][3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[4][0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[4][1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[4][2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[4][3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[3][0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[3][1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[3][2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[3][3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[2][0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[2][1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[2][2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[2][3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[1][0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[1][1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[1][2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[1][3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[0][0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[0][1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[0][2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "led_order[0][3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "full_out[0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "full_out[1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "full_out[2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "full_out[3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "full_out[4]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "full_out[5]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "full_out[6]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "full_out[7]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "full_out[8]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "full_out[9]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[0]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[1]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[2]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[3]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[4]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[5]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[6]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[7]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[8]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[9]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[10]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[11]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[12]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[13]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[14]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[15]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[16]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[17]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[18]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[19]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[20]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[21]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[22]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[23]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[24]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[25]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[26]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[27]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[28]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[29]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[30]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Info (10041): Inferred latch for "input_mag[31]" at LED_Bar_Controller.vhd(64) File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
 Warning (12030): Port "extclk" on the entity instantiation of "cyclonev_pll" is connected to a signal of width 1. The formal width of the signal in the module is 2.  The extra bits will be left dangling without any fan-out logic. File: c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v Line: 2224
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ke84.tdf
     Info (12023): Found entity 1: altsyncram_ke84 File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/db/altsyncram_ke84.tdf Line: 28
@@ -1959,7 +2044,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/db/cmpr_99c.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.04.11.14:26:57 Progress: Loading sldfd7bd03d/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.04.11.14:56:21 Progress: Loading sldfd7bd03d/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -2007,12 +2092,13 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/HEX_DISP.vhd Line: 25
     Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/HEX_DISP.vhd Line: 25
     Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/HEX_DISP.vhd Line: 25
-Info (278001): Inferred 3 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LED_Bar_Controller:inst11|Div0" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 37
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LED_Bar_Controller:inst11|Div1" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 97
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LED_Bar_Controller:inst11|Mod0" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 99
-Info (12130): Elaborated megafunction instantiation "LED_Bar_Controller:inst11|lpm_divide:Div0" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 37
-Info (12133): Instantiated megafunction "LED_Bar_Controller:inst11|lpm_divide:Div0" with the following parameter: File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 37
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LED_Bar_Controller:inst11|Div0" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 39
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LED_Bar_Controller:inst11|Div1" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 120
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LED_Bar_Controller:inst11|Mod0" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 119
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LED_Bar_Controller:inst11|Div2" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 123
+Info (12130): Elaborated megafunction instantiation "LED_Bar_Controller:inst11|lpm_divide:Div0" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 39
+Info (12133): Instantiated megafunction "LED_Bar_Controller:inst11|lpm_divide:Div0" with the following parameter: File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 39
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -2028,8 +2114,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_
     Info (12023): Found entity 1: lpm_abs_kn9 File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/db/lpm_abs_kn9.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_4p9.tdf
     Info (12023): Found entity 1: lpm_abs_4p9 File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/db/lpm_abs_4p9.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "LED_Bar_Controller:inst11|lpm_divide:Div1" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 97
-Info (12133): Instantiated megafunction "LED_Bar_Controller:inst11|lpm_divide:Div1" with the following parameter: File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 97
+Info (12130): Elaborated megafunction instantiation "LED_Bar_Controller:inst11|lpm_divide:Div1" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 120
+Info (12133): Instantiated megafunction "LED_Bar_Controller:inst11|lpm_divide:Div1" with the following parameter: File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 120
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "32"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -2041,8 +2127,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/abs_
     Info (12023): Found entity 1: abs_divider_4dg File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/db/abs_divider_4dg.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_o2f.tdf
     Info (12023): Found entity 1: alt_u_div_o2f File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/db/alt_u_div_o2f.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "LED_Bar_Controller:inst11|lpm_divide:Mod0" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 99
-Info (12133): Instantiated megafunction "LED_Bar_Controller:inst11|lpm_divide:Mod0" with the following parameter: File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 99
+Info (12130): Elaborated megafunction instantiation "LED_Bar_Controller:inst11|lpm_divide:Mod0" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 119
+Info (12133): Instantiated megafunction "LED_Bar_Controller:inst11|lpm_divide:Mod0" with the following parameter: File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 119
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "32"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -2050,55 +2136,62 @@ Info (12133): Instantiated megafunction "LED_Bar_Controller:inst11|lpm_divide:Mo
     Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_uio.tdf
     Info (12023): Found entity 1: lpm_divide_uio File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/db/lpm_divide_uio.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "LED_Bar_Controller:inst11|lpm_divide:Div2" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 123
+Info (12133): Instantiated megafunction "LED_Bar_Controller:inst11|lpm_divide:Div2" with the following parameter: File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 123
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[0][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[1][3]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[2][2]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[2][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[3][2]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[4][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[6][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[8][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[9][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[1][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[3][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[5][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[6][2]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[7][2]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[7][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[9][3]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|full_out[9] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|fade_led[1] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|input_mag[15] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|fade_led[2] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|input_mag[15] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|led_order[0][3] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[0][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[1][3]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[2][2]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[2][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[3][2]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[4][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[6][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[8][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[0][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[9][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[1][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[3][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[5][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[6][2]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[7][2]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[7][0]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Info (13026): Duplicate LATCH primitive "LED_Bar_Controller:inst11|led_order[9][3]" merged with LATCH primitive "LED_Bar_Controller:inst11|led_order[8][3]" File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|full_out[9] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|fade_led[1] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|input_mag[15] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|fade_led[2] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|input_mag[15] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|led_order[0][3] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
     Warning (13013): Ports D and ENA on the latch are fed by the same signal SCOMP:inst|IO_CYCLE File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/SCOMP.vhd Line: 22
-Warning (13012): Latch LED_Bar_Controller:inst11|led_order[8][3] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
+Warning (13012): Latch LED_Bar_Controller:inst11|led_order[8][3] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
     Warning (13013): Ports D and ENA on the latch are fed by the same signal SCOMP:inst|IO_CYCLE File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/SCOMP.vhd Line: 22
-Warning (13012): Latch LED_Bar_Controller:inst11|fade_led[0] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|input_mag[15] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|fade_led[3] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|input_mag[15] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|full_out[8] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|full_out[7] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|full_out[6] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|full_out[5] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|full_out[4] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|full_out[3] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|full_out[2] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|full_out[1] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-Warning (13012): Latch LED_Bar_Controller:inst11|full_out[0] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 41
+Warning (13012): Latch LED_Bar_Controller:inst11|fade_led[0] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|input_mag[15] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|fade_led[3] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|input_mag[15] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|full_out[8] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|full_out[7] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|full_out[6] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|full_out[5] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|full_out[4] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|full_out[3] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|full_out[2] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|full_out[1] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+Warning (13012): Latch LED_Bar_Controller:inst11|full_out[0] has unsafe behavior File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LED_Bar_Controller:inst11|led_order[8][3] File: C:/Users/fxie64/Downloads/SCOMP_Project_Spring25/SCOMP_Project_Spring25/LED_Bar_Controller.vhd Line: 64
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "TPs[3]" is stuck at GND
     Warning (13410): Pin "TPs[2]" is stuck at GND
@@ -2109,15 +2202,15 @@ Info (17049): 15 registers lost all their fanouts during netlist optimizations.
 Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 34 of its 39 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 5 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 17 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4594 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5903 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 57 output pins
-    Info (21061): Implemented 4498 logic cells
+    Info (21061): Implemented 5807 logic cells
     Info (21064): Implemented 19 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 102 warnings
-    Info: Peak virtual memory: 4964 megabytes
-    Info: Processing ended: Fri Apr 11 14:27:17 2025
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:00:50
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 105 warnings
+    Info: Peak virtual memory: 4962 megabytes
+    Info: Processing ended: Fri Apr 11 14:56:44 2025
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:53
 
 

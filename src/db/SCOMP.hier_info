@@ -3974,6 +3974,7 @@ clock_4Hz <= clock_4Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |SCOMP_System|LED_Bar_Controller:inst11
+resetn => brightness_index[31].IN1
 resetn => max_val[31].IN1
 resetn => fade_led[3].IN1
 resetn => led_order[9][0].IN0
