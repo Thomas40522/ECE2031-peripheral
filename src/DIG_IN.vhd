@@ -10,7 +10,7 @@ USE LPM.LPM_COMPONENTS.ALL;
 ENTITY DIG_IN IS
   PORT(
     CS          : IN    STD_LOGIC;
-	 IO_WRITE    : IN    STD_LOGIC;
+	 READ_EN     : IN    STD_LOGIC;
     DI          : IN    STD_LOGIC_VECTOR(15 DOWNTO 0);
     IO_DATA     : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
@@ -27,7 +27,7 @@ ARCHITECTURE a OF DIG_IN IS
     )
     PORT MAP (
       data     => B_DI,
-      enabledt => CS,
+      enabledt => CS AND READ_EN,
       tridata  => IO_DATA
     );
 

@@ -12,7 +12,7 @@ ENTITY clk_div IS
 
 	PORT
 	(
-		clock_10MHz      : IN  STD_LOGIC;
+		clock_12MHz      : IN  STD_LOGIC;
 		clock_100kHz     : OUT STD_LOGIC;
 		clock_10kHz      : OUT STD_LOGIC;
 		clock_100Hz      : OUT STD_LOGIC;
@@ -25,7 +25,7 @@ END clk_div;
 
 ARCHITECTURE a OF clk_div IS
 
-	CONSTANT clk_freq    : INTEGER := 10000000;
+	CONSTANT clk_freq    : INTEGER := 12000000;
 	CONSTANT half_freq   : INTEGER := clk_freq/2;
 	
 	SIGNAL count_100kHz     : INTEGER RANGE 0 TO half_freq/100000; 
@@ -45,7 +45,7 @@ ARCHITECTURE a OF clk_div IS
 BEGIN
 	PROCESS 
 	BEGIN
-	WAIT UNTIL RISING_EDGE(clock_10MHz);
+	WAIT UNTIL RISING_EDGE(clock_12MHz);
 	
 		clock_100kHz <= clock_100kHz_int;
 		clock_10kHz <= clock_10kHz_int;

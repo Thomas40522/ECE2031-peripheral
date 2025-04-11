@@ -34,16 +34,23 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 48)
 		(input)
-		(text "RESETN" (rect 0 0 41 12)(font "Arial" ))
-		(text "RESETN" (rect 21 43 62 55)(font "Arial" ))
+		(text "WRITE_EN" (rect 0 0 54 12)(font "Arial" ))
+		(text "WRITE_EN" (rect 21 43 75 55)(font "Arial" ))
 		(line (pt 0 48)(pt 16 48)(line_width 1))
 	)
 	(port
 		(pt 0 64)
 		(input)
+		(text "RESETN" (rect 0 0 41 12)(font "Arial" ))
+		(text "RESETN" (rect 21 59 62 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
 		(text "IO_DATA[15..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "IO_DATA[15..0]" (rect 21 59 89 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
+		(text "IO_DATA[15..0]" (rect 21 75 89 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
 		(pt 224 32)

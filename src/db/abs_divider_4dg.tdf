@@ -21,9 +21,9 @@
 FUNCTION alt_u_div_o2f (denominator[31..0], numerator[31..0])
 RETURNS ( quotient[31..0], remainder[31..0]);
 FUNCTION lpm_abs_4p9 (data[31..0])
-RETURNS ( overflow, result[31..0]);
+RETURNS ( result[31..0]);
 
---synthesis_resources = lut 688 
+--synthesis_resources = lut 624 
 SUBDESIGN abs_divider_4dg
 ( 
 	denominator[31..0]	:	input;

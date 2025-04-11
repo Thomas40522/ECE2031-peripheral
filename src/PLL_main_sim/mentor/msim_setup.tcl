@@ -1,5 +1,5 @@
 
-# (C) 2001-2024 Altera Corporation. All rights reserved.
+# (C) 2001-2022 Altera Corporation. All rights reserved.
 # Your use of Altera Corporation's design tools, logic functions and 
 # other software and tools, and its AMPP partner logic functions, and 
 # any output files any of the foregoing (including device programming 
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 20.1 720 win32 2024.10.12.14:44:55
+# ACDS 19.1 670 win32 2022.10.08.13:53:25
 
 # ----------------------------------------
 # Initialize variables
@@ -113,7 +113,7 @@ if ![info exists QSYS_SIMDIR] {
 }
 
 if ![info exists QUARTUS_INSTALL_DIR] { 
-  set QUARTUS_INSTALL_DIR "E:/apps/intelfpga_lite/20.1/quartus/"
+  set QUARTUS_INSTALL_DIR "C:/intelfpga_lite/19.1/quartus/"
 }
 
 if ![info exists USER_DEFINED_COMPILE_OPTIONS] { 
@@ -206,10 +206,10 @@ alias elab {
 }
 
 # ----------------------------------------
-# Elaborate the top level design with -voptargs=+acc option
+# Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -voptargs=+acc -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev $TOP_LEVEL_NAME
+  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
@@ -221,7 +221,7 @@ alias ld "
 "
 
 # ----------------------------------------
-# Compile all the design files and elaborate the top level design with -voptargs=+acc
+# Compile all the design files and elaborate the top level design with -novopt
 alias ld_debug "
   dev_com
   com
@@ -241,11 +241,11 @@ alias h {
   echo
   echo "elab                                              -- Elaborate top level design"
   echo
-  echo "elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option"
+  echo "elab_debug                                        -- Elaborate the top level design with novopt option"
   echo
   echo "ld                                                -- Compile all the design files and elaborate the top level design"
   echo
-  echo "ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc"
+  echo "ld_debug                                          -- Compile all the design files and elaborate the top level design with -novopt"
   echo
   echo 
   echo
