@@ -11,11 +11,10 @@ use ieee.numeric_std.all;
 -- Entity block defines the I/O of design; how the hardware will interface with the outside world
 entity LED_Bar_Controller is
 	port(
-	resetn      :in   std_logic;
-	clock			:in	std_logic;								-- 100KHz Clock is used for PWM control of LED brightness
-	led_write	:in	std_logic;								-- Signal from IO decoder to change displayed value
-	mval_write  :in   std_logic;
---	mv_write		:in	std_logic;								-- Signal from IO decoder to change max value
+	resetn      :in   std_logic;				-- active low reset
+	clock			:in	std_logic;		-- 100KHz Clock is used for PWM control of LED brightness
+	led_write	:in	std_logic;                      -- signal to allow the value to be displayed to be updated
+	mval_write  :in   std_logic;				-- signal to allow the max value to be updated
 	data_in		:in	std_logic_vector(15 downto 0);	-- 16-bit value from SCOMP
 	data_out		:out	std_logic_vector(15 downto 0) 	-- LED output
 	);
@@ -28,18 +27,18 @@ architecture Behavior of LED_Bar_Controller is
 	type gamma_array is array(0 to 255) of integer;
 	
 	-- Signals (Variables)
-	signal 	led_order : int_array;							-- Array that holds the order the LED's will illuminate in
-	signal 	input_mag : integer;								-- Absolute value of input
-	signal	fade_led	 : integer;								-- Reflects which LED needs to be driven by PWM
-	signal	full_out	 : std_logic_vector(9 downto 0); -- Vector representing which LED's are being fully illuminated
-	signal	pwm_out	 : std_logic_vector(9 downto 0); -- Vector representing which LED's are being partially illuminated
-	signal   brightness_index : integer := 0;
-	signal	clk_count : integer := 0;
-	signal   max_val   : integer := 1000;
-	signal   led_range : integer := (max_val / 10);
+	signal 	led_order : int_array;					-- Array that holds the order the LED's will illuminate in
+	signal 	input_mag : integer;					-- Absolute value of input
+	signal	fade_led	 : integer;				-- Reflects which LED needs to be driven by PWM
+	signal	full_out	 : std_logic_vector(9 downto 0); 	-- Vector representing which LED's are being fully illuminated
+	signal	pwm_out	 : std_logic_vector(9 downto 0); 		-- Vector representing which LED's are being partially illuminated
+	signal   brightness_index : integer := 0;			-- Used to index into gamma table for the faded LED
+	signal	clk_count : integer := 0;				-- Counter used for PWM logic
+	signal   max_val   : integer := 1000;				-- Relative max value that is represented by the bar
+	signal   led_range : integer := (max_val / 10);			-- The "amount" that each LED represents (used for logic below)
 	
 	-- Constants
-	constant gamma_table : gamma_array := (
+	constant gamma_table : gamma_array := (				-- Gamme table with gamma values
 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,
 1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,
@@ -60,9 +59,10 @@ architecture Behavior of LED_Bar_Controller is
 );
 	
 begin
-	-- This process only runs when a value is written to the LED bar
+	-- This process only runs when a value is written to the LED bar or when the max value is updated
 	process(led_write, mval_write, resetn)
 	begin
+		-- Reset necessary signals when reset is active (low)
 		if(resetn = '0') then
 			input_mag <= 0;
 			full_out <= "0000000000";
@@ -90,6 +90,7 @@ begin
 					end if;
 				end if;
 			end loop;
+		-- If mval_write is active, then we update our relative max value
 		elsif (mval_write = '1') then
 			max_val <= abs(to_integer(signed(data_in)));
 		end if;
@@ -113,18 +114,19 @@ begin
 	begin
 		-- PWM output vector defaults to 0's for undriven components
 		pwm_out <= (others => '0');
+		-- Reset necessary pwm signals on reset
 		if(resetn = '0') then
 			pwm_out <= "0000000000";
-		-- Turn the LED on for longer amount of time the closer the input value gets to its threshold
+		-- Ensure pwm_out holds proper value (1) when the threshold is reached for a perfectly divisible input
 		elsif (input_mag mod led_range = 0 and input_mag /= 0) then
 			pwm_out(led_order(input_mag / led_range - 1)) <= '1';
 		else
-			--if(clk_count < input_mag mod led_range) then
+			-- calculate brightness percentage, scaled by 255, to index into the gamma table
 			brightness_index <= ((input_mag mod led_range) * 255) / led_range;
-         if (brightness_index > 255) then
-             brightness_index <= 255;
-         end if;
-			
+			 if (brightness_index > 255) then
+			     brightness_index <= 255;
+			 end if;
+			-- PWM logic using the gamme table
 			if(clk_count < gamma_table(brightness_index)) then
 				pwm_out(led_order(fade_led)) <= '1';
 			else
