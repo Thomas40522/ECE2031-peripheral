@@ -1,0 +1,70 @@
+WIDTH=16;
+DEPTH=2048;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+0000: 483A; --             AND     Zero
+0001: 1036; --             STORE   Total
+0002: 1038; --             STORE   Increment
+0003: 9000; --             IN      Switches      ; Read the switches
+0004: 4006; --             JZERO   Set           ; If zero, continue to Set
+0005: 2803; --             JUMP    WaitAllDown   ; Otherwise, keep waiting
+0006: 9000; --             IN      Switches
+0007: 4006; --             JZERO   Set           ; Stay until at least one switch is up
+0008: 1039; --             STORE   SwChange
+0009: 6006; -- 			SHIFT   6
+000A: 9822; --             OUT     Bar_max
+000B: 9000; --             IN      Switches
+000C: 2039; --             SUB     SwChange
+000D: 400B; --             JZERO   Wait
+000E: 280F; --             JUMP    Loop
+000F: 9000; --             IN      Switches
+0010: 1038; --             STORE   Increment
+0011: 6019; --             SHIFT   -9
+0012: 4014; --             JZERO   Positive    
+0013: 381E; --             JPOS    NegativeInit
+0014: 0838; --             LOAD    Increment
+0015: 402B; --             JZERO   Display
+0016: 0836; --             LOAD    Total
+0017: 6801; --             ADDI    1
+0018: 1036; --             STORE   Total
+0019: 9821; --             OUT     Bar
+001A: 0838; --             LOAD    Increment
+001B: 6FFF; --             ADDI    -1
+001C: 1038; --             STORE   Increment
+001D: 3814; --             JPOS    Positive
+001E: 0838; --             LOAD    Increment
+001F: 483C; --             AND     Bit9
+0020: 1038; --             STORE   Increment
+0021: 0838; --             LOAD    Increment
+0022: 402B; --             JZERO   Display
+0023: 0836; --             LOAD    Total
+0024: 6FFF; --             ADDI    -1
+0025: 1036; --             STORE   Total
+0026: 9821; --             OUT     Bar
+0027: 0838; --             LOAD    Increment
+0028: 6FFF; --             ADDI    -1
+0029: 1038; --             STORE   Increment
+002A: 3821; --             JPOS    Negative
+002B: 0836; --             LOAD    Total
+002C: 9821; --             OUT     Bar
+002D: 9804; --             OUT     Hex0
+002E: 1036; --             STORE   Total
+002F: 8031; --             CALL    Delay
+0030: 280F; --             JUMP    Loop
+0031: 9802; --             OUT     Timer
+0032: 9002; --             IN      Timer
+0033: 1837; --             ADD     DelayTime
+0034: 3032; --             JNEG    WaitingLoop
+0035: 8800; --             RETURN
+0036: 0000; -- Total:       DW 0
+0037: FFFF; -- DelayTime:   DW -1
+0038: 0000; -- Increment:   DW 0
+0039: 0000; -- SwChange:    DW 0
+003A: 0000; -- Zero:        DW 0
+003B: 0001; -- Bit0:        DW &B0000000001
+003C: 01FF; -- Bit9:        DW &B0111111111
+[003D..07FF] : 0000; -- [empty memory]
+END;

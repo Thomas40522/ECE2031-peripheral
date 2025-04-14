@@ -1,6 +1,6 @@
 -- LED BAR CONTROLLER
--- Controls the 10 LED's on the DE10 board to visually represent 16-bit values with a bar that fills up
--- Updated 23MAR2025
+-- Controls the 10 LED's on the DE10 board to visually represent 16-bit values with a bar that fills up relative to a maximum representable value
+-- Updated 14 APR 2025
 
 -- Inclusions
 library ieee;
@@ -11,12 +11,12 @@ use ieee.numeric_std.all;
 -- Entity block defines the I/O of design; how the hardware will interface with the outside world
 entity LED_Bar_Controller is
 	port(
-	resetn      :in   std_logic;				-- active low reset
-	clock			:in	std_logic;		-- 100KHz Clock is used for PWM control of LED brightness
-	led_write	:in	std_logic;                      -- signal to allow the value to be displayed to be updated
-	mval_write  :in   std_logic;				-- signal to allow the max value to be updated
+	resetn      :in   std_logic;								-- active low reset
+	clock			:in	std_logic;								-- 100KHz Clock is used for PWM control of LED brightness
+	led_write	:in	std_logic;                      	-- signal to allow the value to be displayed to be updated
+	mval_write  :in   std_logic;								-- signal to allow the max value to be updated
 	data_in		:in	std_logic_vector(15 downto 0);	-- 16-bit value from SCOMP
-	data_out		:out	std_logic_vector(15 downto 0) 	-- LED output
+	data_out		:out	std_logic_vector(9 downto 0) 		-- LED output
 	);
 end LED_Bar_Controller;
 
@@ -27,15 +27,15 @@ architecture Behavior of LED_Bar_Controller is
 	type gamma_array is array(0 to 255) of integer;
 	
 	-- Signals (Variables)
-	signal 	led_order : int_array;					-- Array that holds the order the LED's will illuminate in
-	signal 	input_mag : integer;					-- Absolute value of input
-	signal	fade_led	 : integer;				-- Reflects which LED needs to be driven by PWM
-	signal	full_out	 : std_logic_vector(9 downto 0); 	-- Vector representing which LED's are being fully illuminated
-	signal	pwm_out	 : std_logic_vector(9 downto 0); 		-- Vector representing which LED's are being partially illuminated
-	signal   brightness_index : integer := 0;			-- Used to index into gamma table for the faded LED
-	signal	clk_count : integer := 0;				-- Counter used for PWM logic
-	signal   max_val   : integer := 1000;				-- Relative max value that is represented by the bar
-	signal   led_range : integer := (max_val / 10);			-- The "amount" that each LED represents (used for logic below)
+	signal 	led_order : int_array;							-- Array that holds the order the LED's will illuminate in
+	signal 	input_mag : integer;								-- Absolute value of input
+	signal	fade_led	 : integer;								-- Reflects which LED needs to be driven by PWM
+	signal	full_out	 : std_logic_vector(9 downto 0); -- Vector representing which LED's are being fully illuminated
+	signal	pwm_out	 : std_logic_vector(9 downto 0); -- Vector representing which LED's are being partially illuminated
+	signal   brightness_index : integer := 0;				-- Used to index into gamma table for the faded LED
+	signal	clk_count : integer := 0;						-- Counter used for PWM logic
+	signal   max_val   : integer := 1000;					-- Relative max value that is represented by the bar
+	signal   led_range : integer := (max_val / 10);		-- The "amount" that each LED represents (used for logic below)
 	
 	-- Constants
 	constant gamma_table : gamma_array := (				-- Gamme table with gamma values
@@ -59,7 +59,7 @@ architecture Behavior of LED_Bar_Controller is
 );
 	
 begin
-	-- This process only runs when a value is written to the LED bar or when the max value is updated
+	-- This process only runs when a value is written to the LED bar, when the max value is updated, or when a reset is done
 	process(led_write, mval_write, resetn)
 	begin
 		-- Reset necessary signals when reset is active (low)
@@ -99,7 +99,7 @@ begin
 	-- This process controls the counter used by the PWM process
 	process(clock)
 	begin
-		-- Clk counter resets after 100 clocks
+		-- Clk counter resets once it reaches 255 clocks (gamma table is indexed 0 to 255)
 		if rising_edge(clock) then
 			if(clk_count >= 255) then
 				clk_count <= 0;
@@ -117,7 +117,7 @@ begin
 		-- Reset necessary pwm signals on reset
 		if(resetn = '0') then
 			pwm_out <= "0000000000";
-		-- Ensure pwm_out holds proper value (1) when the threshold is reached for a perfectly divisible input
+		-- Ensure pwm_out holds proper value (1) when the threshold is reached for a perfectly divisible input (otherwise lead to a blinking led)
 		elsif (input_mag mod led_range = 0 and input_mag /= 0) then
 			pwm_out(led_order(input_mag / led_range - 1)) <= '1';
 		else

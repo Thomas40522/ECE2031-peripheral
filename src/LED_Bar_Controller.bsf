@@ -62,8 +62,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 208 32)
 		(output)
-		(text "data_out[15..0]" (rect 0 0 57 12)(font "Arial" ))
-		(text "data_out[15..0]" (rect 130 27 187 39)(font "Arial" ))
+		(text "data_out[9..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "data_out[9..0]" (rect 133 27 187 39)(font "Arial" ))
 		(line (pt 208 32)(pt 192 32)(line_width 3))
 	)
 	(drawing

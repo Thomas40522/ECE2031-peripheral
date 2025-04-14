@@ -17,8 +17,8 @@ ENTITY IO_DECODER IS
     TIMER_EN      : OUT STD_LOGIC;
     HEX0_EN       : OUT STD_LOGIC;
     HEX1_EN       : OUT STD_LOGIC;
-	 LEDBAR_EN		: OUT STD_LOGIC;
-	 MAXVAL_EN     : OUT STD_LOGIC
+	 LEDBAR_WR		: OUT STD_LOGIC;
+	 MAXVAL_WR     : OUT STD_LOGIC
   );
 
 END ENTITY;
@@ -35,7 +35,7 @@ begin
   TIMER_EN     <= '1' WHEN (ADDR_INT = 16#002#) and (IO_CYCLE = '1') ELSE '0';
   HEX0_EN      <= '1' WHEN (ADDR_INT = 16#004#) and (IO_CYCLE = '1') ELSE '0';
   HEX1_EN      <= '1' WHEN (ADDR_INT = 16#005#) and (IO_CYCLE = '1') ELSE '0';
-  LEDBAR_EN		<= '1' WHEN (ADDR_INT = 16#006#)	and (IO_CYCLE = '1') ELSE '0';
-  MAXVAL_EN		<= '1' WHEN (ADDR_INT = 16#007#)	and (IO_CYCLE = '1') ELSE '0';
+  LEDBAR_WR		<= '1' WHEN (ADDR_INT = 16#021#)	and (IO_CYCLE = '1') ELSE '0';
+  MAXVAL_WR		<= '1' WHEN (ADDR_INT = 16#022#)	and (IO_CYCLE = '1') ELSE '0';
       
 END a;

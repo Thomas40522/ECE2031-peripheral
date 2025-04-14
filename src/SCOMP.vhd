@@ -72,7 +72,7 @@ begin
 		numwords_a => 2048,
 		widthad_a => 11,
 		width_a => 16,
-		init_file => "bar_demo_7.mif",
+		init_file => "bar_demo_10.mif",
 		clock_enable_input_a => "BYPASS",
 		clock_enable_output_a => "BYPASS",
 		intended_device_family => "MAX 10",
